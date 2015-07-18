@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE displaychannel SYSTEM "../../../dtd/displaychannel.dtd">
+
+<displaychannel x="0" y="0" width="100%" height="100%" >
+    <background>
+	<!-- date background -->
+		<area x="0" y="80%" width="100%" height="20%" layer="1">
+			<drawrectangle x="0" y="0" width="{areawidth}" height="{areaheight}" color="{clrTransBlack}" />
+		</area>	
+		
+		<area x="0" y="85%" width="100%" height="15%" layer="1">
+			<drawimage name="header" imagetype="skinpart" path="header" x="0" y="0" width="6%" height="{areaheight}"/>
+		</area>	
+
+</background>
+
+<datetime>
+	<area x="0" y="80%" width="100%" height="5%" layer="2">
+		<drawtext name="dayname" x="0" y="0" align="right" valign="center" font="{vdrOsd}" fontsize="95%" color="{clrWhite}" text="{daynameshort} {day}. {monthnameshort}. {time} " />
+      </area>
+</datetime>
+
+
+    <currentweather>
+
+    </currentweather>
+    
+	
+
+<channelinfo>
+
+
+	 <area x="0" y="80%" width="100%" height="5%" layer="2">
+		<drawtext name="channelname" x="0" y="0" align="left" valign="center" font="{vdrOsd}" fontsize="95%" color="{clrWhite}" text="{channelnumber}  {channelname}" />
+	  </area>
+
+    </channelinfo>
+    
+
+<epginfo>
+	<area x="0" y="85%" width="100%" height="15%" layer="2">
+		
+	    <drawtext name="start" x="{areawidth}*0.0025" y="0" font="{vdrOsd}" fontsize="25%" color="{clrWhite}" text="{currentstart}" />
+		 
+		
+		 
+		<drawtext name="title" x="{width(start)}+{width(start)}*0.25" y="0" width="{areawidth}-{width(startstop)}-{posx(title)}-{posx(start)}*2" font="{vdrOsd}" fontsize="25%" color="{clrTheme}" text="{currenttitle}"  />       
+		<drawtext name="subtitle" x="{width(start)}+{width(start)}*0.25" y="{posy(title)}+{height(title)}" width="{areawidth}-{width(startstop)}-{posx(title)}-{posx(start)}*2" font="{vdrOsd}" fontsize="25%" color="{clrYellow}" text="{currentsubtitle}"/>
+		
+		<drawtext name="nextstart" x="{areawidth}*0.0025" y="{posy(subtitle)}+{height(subtitle)}" font="{vdrOsd}" fontsize="25%" color="{clrWhite}" text="{nextstart}" />
+        <drawtext name="nexttitle" x="{width(start)}+{width(start)}*0.25"  y="{posy(subtitle)}+{height(subtitle)}" font="{vdrOsd}" width="{areawidth} - {width(nextstartstop)} - {posx(nexttitle)} - {posx(nextstart)}*2" fontsize="25%" color="{clrTheme}" text="{nexttitle}"/>
+		<drawtext name="nextsubtitle" x="{width(start)}+{width(start)}*0.25"  y="{posy(nexttitle)}+{height(nexttitle)}" width="{areawidth} - {width(nextstartstop)} -{posx(nexttitle)}-{posx(nextstart)}*2" font="{vdrOsd}" fontsize="25%" color="{clrYellow}" text="{nextsubtitle}"/>
+		
+
+	
+	</area>	
+
+</epginfo>
+
+<progressbar>
+	
+</progressbar>
+
+<screenresolution>
+	</screenresolution>
+
+<statusinfo>
+	
+	
+</statusinfo>
+	
+	
+<audioinfo>
+
+</audioinfo>
+
+   
+    <channelgroup>
+
+    
+          <area x="10%" y="80%" width="80%" height="20%" layer="3">
+	
+            <drawtext valign="center" align="left" width="29%"  font="{vdrOsd}" fontsize="18%" color="{clrWhite}" text="{prevgroup}" />
+			<drawtext valign="center" align="center" width="30%"  font="{vdrOsd}" fontsize="18%" color="{clrTheme}" text="{group}" />
+            <drawtext valign="center" align="right" width="29%"  font="{vdrOsd}" fontsize="18%" color="{clrWhite}" text="{nextgroup}" />
+        </area>             
+    </channelgroup>
+
+<signalquality>
+	
+</signalquality>
+
+<signalqualityback>
+	
+</signalqualityback>
+
+  <message>
+<area x="0" y="95%" width="100%" height="5%" layer="6">  
+	
+<drawrectangle x="0" y="0" width="{areawidth}" height="{areaheight}" color="{clrBlack}" />
+	</area>	
+	  <area x="0" y="95%" width="100%" height="5%" layer="7">  
+				  
+		
+		<drawimage condition="{warning}" name="button_yellow_new" imagetype="skinpart" path="button_yellow_new" x="3" y="3" width="{areawidth}-6" height="{areaheight}-6"/>
+		<drawimage condition="{error}" name="button_red_new" imagetype="skinpart" path="button_red_new" x="3" y="3" width="{areawidth}-6" height="{areaheight}-6"/>
+		<drawimage condition="{status}" name="button_green_new" imagetype="skinpart" path="button_green_new" x="3" y="3" width="{areawidth}-6" height="{areaheight}-6"/>
+		<drawimage condition="{info}" name="button_blue_new" imagetype="skinpart" path="button_blue_new" x="3" y="3" width="{areawidth}-6" height="{areaheight}-6"/>
+	
+	</area>
+	<area x="0" y="95%" width="100%" height="5%" layer="7">    
+		<drawtext condition="{warning}" align="center" valign="center" font="{vdrOsd}" fontsize="55%" color="{clrBlack}" text="{text}" />
+		<drawtext condition="{error}" align="center" valign="center" font="{vdrOsd}" fontsize="55%" color="{clrWhite}" text="{text}" />
+		<drawtext condition="{status}" align="center" valign="center" font="{vdrOsd}" fontsize="55%" color="{clrBlack}" text="{text}" />
+		<drawtext condition="{info}" align="center" valign="center" font="{vdrOsd}" fontsize="55%" color="{clrWhite}" text="{text}" />
+	</area>
+</message>
+
+	
+</displaychannel>

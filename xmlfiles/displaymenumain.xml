@@ -1,0 +1,73 @@
+<menumain x="0" y="0" width="100%" height="100%" >
+<background>
+	<!-- header background -->
+		<area x="0" y="0" width="100%" height="6%" layer="2">
+			<drawrectangle x="0" y="0" width="{areawidth}" height="{areaheight}" color="{clrBlack}" />
+			<drawimage imagetype="skinpart" path="header" x="3" y="3" width="{areawidth}-6" height="{areaheight}-6"/>
+	</area>
+
+	<!-- list background -->
+		<area x="0" y="0" width="100%" height="100%" layer="1">
+            <drawrectangle x="0" y="0" width="{areawidth}" height="{areaheight}" color="{clrTransBlack}" />
+	    </area>
+
+	
+</background>
+<header>
+	<area x="1%" y="0%" width="70%" height="6%" layer="2">
+		<drawtext x="0%" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrBlack}" text="VDR {vdrversion}" />	
+	</area>
+</header>
+
+<datetime>
+	<area x="70%" y="0%" width="30%" height="6%" layer="3">
+		<drawtext name="dayname" x="0" y="0" align="right" valign="center" font="{vdrOsd}" fontsize="75%" color="{clrBlack}" text="{daynameshort} {day}. {monthnameshort}. {time} " />
+    </area>
+</datetime>
+
+<menuitems x="0" y="10%" orientation="vertical" width="100%" height="65%" numlistelements="18">
+
+<listelement >
+<!--active item -->
+<areacontainer condition="eq({specialEffect1}, 0)">
+	<area x="0" width="95%" layer="2">
+		<drawrectangle condition="{current}" x="0" y="0" width="{areawidth}" height="{areaheight}" color="{clrBlack}" />
+		<drawimage condition="{current}" imagetype="skinpart" path="header" x="3" y="3" width="{areawidth}-6" height="{areaheight}-6"/>
+	</area>
+	<areascroll scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="1%" width="93%" layer="3">
+		<drawtext condition="not{current}" name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{number} {label}" />
+		<drawtext condition="{current}" name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{number} {label}" />
+    </areascroll>
+</areacontainer>				
+<!-- toDo special effect 
+ <areacontainer condition="eq({specialEffect1}, 1)"> 
+	<area x="0" width="50%" layer="2">
+		<drawrectangle name="bar" condition="{current}" x="0" y="0" valign="center" width="{areawidth}*0.03334" height="{areaheight}*0.5" color="{clrBlack}" />
+		<drawrectangle name="bar1" condition="{current}" x="{width(bar)}" y="0" valign="center" width="{areawidth}-{width(bar)}" height="{areaheight}" color="{clrBlack}" />
+		<drawimage condition="{current}" imagetype="skinpart" path="menuback" x="3" y="{posy(bar)}+3" width="{width(bar)}" height="{height(bar)}-6"/>
+		<drawimage condition="{current}" imagetype="skinpart" path="header" x="{width(bar)}+3" y="3" width="{areawidth}-{width(bar)}-6" height="{areaheight}-6"/>
+	</area>
+	<areascroll scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="2%" width="96%"  layer="3">
+		<drawtext condition="not{current}" name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{number} {label}" />
+		<drawtext condition="{current}" name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{number} {label}" />
+    </areascroll>
+ </areacontainer>			
+-->	
+	
+	
+
+</listelement>
+</menuitems>
+
+<scrollbar>
+       <area x="99%" y="10%" width="1%" height="65%" layer="5">
+	       <drawrectangle x="0" y="0" width="{areawidth}" height="{areaheight}" color="{clrBlack}" />
+		
+          </area>
+         <area x="99%" y="10%" width="1%" height="65%" layer="6">
+		 
+            <drawimage imagetype="skinpart" path="header" x="3" y="{areaheight} * {offset} / 1000+3" width="{areawidth}/1.5" height="{areaheight} * {height} / 1000-6"/>
+        </area>
+</scrollbar>
+
+</menumain>

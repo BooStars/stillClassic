@@ -1,0 +1,251 @@
+<menuschedules x="0" y="0" width="100%" height="100%" >
+
+<background>
+	<!-- header background -->
+		<area x="0" y="0" width="100%" height="6%" layer="2">
+	       <drawrectangle x="0" y="0" width="{areawidth}" height="{areaheight}" color="{clrTransBlack}" />
+		   <drawimage name="header" imagetype="skinpart" path="header" x="4" y="4" width="{areawidth}-8" height="{areaheight}-8"/>
+		</area>
+
+	<!-- list background -->
+		<area x="0" y="0" width="100%" height="100%" layer="1">
+            <drawrectangle x="0" y="0" width="{areawidth}" height="{areaheight}" color="{clrTransBlack}" />
+	    </area>
+
+</background>
+
+
+<header>
+	<area x="1%" y="0%" width="70%" height="6%" layer="2">
+		<drawtext condition="{whatson}" x="0"  valign="center" font="{vdrOsd}" fontsize="80%" color="{clrBlack}" text="{title}" />
+		<drawtext condition="{whatsonnext}" x="0" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrBlack}" text="{title}" />
+		<drawtext condition="{whatsonnow}" x="0" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrBlack}" text="{title}" />
+		<drawtext condition="{whatsonfavorites}" x="0" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrBlack}" text="{title}" />
+	
+	</area>
+</header>
+
+
+<datetime>
+	<area x="70%" y="0%" width="30%" height="6%" layer="3">
+		<drawtext name="dayname" x="0" y="0" align="right" valign="center" font="{vdrOsd}" fontsize="75%" color="{clrBlack}" text="{daynameshort} {day}. {monthnameshort}. {time} " />
+    </area>
+</datetime>
+
+<menuitems x="0" y="10%" orientation="vertical" width="100%" height="65%" numlistelements="18">
+	
+<listelement>
+	<!--active item -->
+	<area x="0" width="95%" layer="2">
+		<drawrectangle condition="{current}" x="0" y="0" width="{areawidth}" height="{areaheight}" color="{clrBlack}" />
+		<drawimage condition="{current}" imagetype="skinpart" path="header" x="3" y="3" width="{areawidth}-6" height="{areaheight}-6"/>
+	</area>
+         
+			
+<!-- WHATSON -->
+	<!-- <fill color="{clrBlue}" /> -->
+	<area condition="{whatson} ++ not{separator}" x="1%" width="25%" layer="3">
+		<drawtext condition="not{current}" valign="center" name="date" x="0" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{day} {printf('%02d', daynumeric)}" />		
+		<drawtext condition="not{current}" valign="center" name="start" x="{width(date)}*2" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{start} - {stop}" />		
+	
+		<drawtext condition="{current}" valign="center" name="date" x="0" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{day} {printf('%02d', daynumeric)}" />		
+		<drawtext condition="{current}" valign="center" name="start" x="{width(date)}*2" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{start} - {stop}" />	
+
+		<drawtext condition="{current}++{timerpartitial}" name="timerpartitial" x="{posx(start)}+{width(start)}*2" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="t" /> 
+		<drawtext condition="{current}++{timerfull}" name="timerfull" x="{posx(start)}+{width(start)}*2" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="T" /> 
+		<drawtext condition="{current}++{hasVPS}" name="vps" x="{width(timerfull)}+{posx(start)}+{width(start)}*2" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="V" /> 		
+
+		<drawtext condition="not{current}++{timerpartitial}" name="timerpartitial" x="{posx(start)}+{width(start)}*2" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="t" /> 
+		<drawtext condition="not{current}++{timerfull}" name="timerfull" x="{posx(start)}+{width(start)}*2" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="T" /> 
+		<drawtext condition="not{current}++{hasVPS}" name="vps" x="{width(timerfull)}+{posx(start)}+{width(start)}*2" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="V" /> 		
+
+		
+	</area>
+	<areascroll condition="{whatson}++ not{separator}" scrollelement="menutext" mode="carriagereturn" orientation="horizontal" delay="1000" scrollspeed="medium" x="25%" width="73%" layer="3">	
+		<drawtext condition="not{current}" valign="center" name="menutext" x="0" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{title}" />
+		<drawtext condition="{current}" valign="center" name="menutext" x="0" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{title}" />
+ 
+    </areascroll>
+ 
+			
+<!-- WHATSONNOW -->
+<areacontainer condition="not{current}">
+		<area condition="{whatsonnow} ++ not{separator}" x="1%" width="45%" layer="3">	
+				<drawtext name="channelnumber" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{channelnumber}" /> 
+				<drawimage name="logo" condition="{channellogoexists}++eq({menuschedules_logos}, 1)" imagetype="channellogo" path="{channelid}" x="8%" y="0" valign="center" width="{areawidth}/10" height="{areaheight}" />
+				<drawtext name="channelname" x="{areawidth}/4" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{channelname}" /> 
+						
+				<drawtext name="starttime" x="{areawidth}/1.5" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{start}" /> 
+				<drawrectangle name="process1" condition="{running}" x="{posx(starttime)} + {width(starttime)}*1.25" y="0" valign="center" width="10%" height="{areaheight}/2" color="{clrWhite}" />
+				<drawrectangle name="process2" condition="{running}" x="{posx(starttime)} + {width(starttime)}*1.25+2"  valign="center" y="0" width="{width(process1)} - 4" height="{areaheight}/2 - 4" color="{clrTransparent}" />
+				<drawrectangle name="process3" condition="{running}" x="{posx(starttime)} + {width(starttime)}*1.25+4"  valign="center" y="0" width="{width(process1)} * {elapsed} / {duration} - 8" height="{areaheight}/2 - 8" color="{clrWhite}" />
+			
+				<drawtext condition="{timerpartitial}" name="timerpartitial" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="t " /> 
+				<drawtext condition="{timerfull}" name="timerfull" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="T " /> 
+				<drawtext condition="{hasVPS}" name="vps" x="{posx(timerfull)}+{width(timerfull)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="V" /> 
+		</area>
+
+		<areascroll condition="{whatsonnow} ++ not{separator}" scrollelement="menutext" mode="carriagereturn" orientation="horizontal" delay="1000" scrollspeed="medium" x="46%" width="48%" layer="3">
+				<drawtext name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{title}" />
+		</areascroll>
+</areacontainer>	
+
+<areacontainer condition="{current}">
+		<area condition="{whatsonnow} ++ not{separator}" x="1%" width="45%" layer="3">	
+				<drawtext name="channelnumber" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{channelnumber}" /> 
+				<drawimage name="logo" condition="{channellogoexists}++eq({menuschedules_logos}, 1)" imagetype="channellogo" path="{channelid}" x="8%" y="0" valign="center" width="{areawidth}/10" height="{areaheight}" />
+				<drawtext name="channelname" x="{areawidth}/4" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{channelname}" /> 
+						
+				<drawtext name="starttime" x="{areawidth}/1.5" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{start}" /> 
+				<drawrectangle name="process1" condition="{running}" x="{posx(starttime)} + {width(starttime)}*1.25" y="0" valign="center" width="10%" height="{areaheight}/2" color="{clrBlack}" />
+				<drawrectangle name="process2" condition="{running}" x="{posx(starttime)} + {width(starttime)}*1.25+2" valign="center" y="0" width="{width(process1)} - 4" height="{areaheight}/2 - 4" color="{clrTransparent}" />
+				<drawrectangle name="process3" condition="{running}" x="{posx(starttime)} + {width(starttime)}*1.25+4" valign="center" y="0" width="{width(process1)} * {elapsed} / {duration} - 8" height="{areaheight}/2 - 8" color="{clrBlack}" />
+			
+				<drawtext condition="{timerpartitial}" name="timerpartitial" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="t " /> 
+				<drawtext condition="{timerfull}" name="timerfull" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="T " /> 
+				<drawtext condition="{hasVPS}" name="vps" x="{posx(timerfull)}+{width(timerfull)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="V" /> 
+		</area>
+
+		<areascroll condition="{whatsonnow} ++ not{separator}" scrollelement="menutext" mode="carriagereturn" orientation="horizontal" delay="1000" scrollspeed="medium" x="46%" width="48%" layer="3">
+				<drawtext name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{title}" />
+		</areascroll>
+ </areacontainer>	 
+			
+			
+<!-- WHATSONNEXT  -->
+<areacontainer condition="not{current}">
+	<area condition="{whatsonnext} ++ not{separator}" x="1%" width="45%" layer="3">	
+		<drawtext name="channelnumber" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{channelnumber}" /> 
+		<drawimage name="logo" condition="{channellogoexists}++eq({menuschedules_logos}, 1)" imagetype="channellogo" path="{channelid}" x="8%" y="0" valign="center" width="{areawidth}/10" height="{areaheight}" />
+		<drawtext name="channelname" x="{areawidth}/4" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{channelname}" /> 
+		<drawtext name="starttime" x="{areawidth}/1.5" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{start} - {stop}" /> 
+		
+				<drawtext condition="{timerpartitial}" name="timerpartitial" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="t " /> 
+				<drawtext condition="{timerfull}" name="timerfull" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="T " /> 
+				<drawtext condition="{hasVPS}" name="vps" x="{posx(timerfull)}+{width(timerfull)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="V" /> 
+
+	</area>
+
+	<areascroll condition="{whatsonnext} ++ not{separator}" scrollelement="menutext" mode="carriagereturn" orientation="horizontal" delay="1000" scrollspeed="medium" x="45%" width="49%" layer="3">
+		<drawtext name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{title}" />	
+    </areascroll>
+ </areacontainer>	 
+<areacontainer condition="{current}">
+	<area condition="{whatsonnext} ++ not{separator}" x="1%" width="45%" layer="3">	
+		<drawtext name="channelnumber" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{channelnumber}" /> 
+		<drawimage name="logo" condition="{channellogoexists}++eq({menuschedules_logos}, 1)" imagetype="channellogo" path="{channelid}" x="8%" y="0" valign="center" width="{areawidth}/10" height="{areaheight}" />
+		<drawtext name="channelname"  x="{areawidth}/4" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{channelname}" /> 
+		<drawtext name="starttime" x="{areawidth}/1.5" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{start} - {stop}" /> 
+		
+			<drawtext condition="{timerpartitial}" name="timerpartitial" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="t " /> 
+			<drawtext condition="{timerfull}" name="timerfull" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="T " /> 
+			<drawtext condition="{hasVPS}" name="vps" x="{posx(timerfull)}+{width(timerfull)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="V" /> 
+	
+	</area>
+
+	<areascroll condition="{whatsonnext} ++ not{separator}" scrollelement="menutext" mode="carriagereturn" orientation="horizontal" delay="1000" scrollspeed="medium" x="45%" width="49%" layer="3">
+		<drawtext name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{title}" />	
+    </areascroll>
+ </areacontainer>
+<!-- WHATSONFAVORITES  -->
+<areacontainer condition="not{current}">
+	<area condition="{whatsonfavorites} ++ not{separator}" x="1%" width="45%" layer="3">	
+				<drawtext name="channelnumber" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{channelnumber}" /> 
+				<drawimage name="logo" condition="{channellogoexists}++eq({menuschedules_logos}, 1)" imagetype="channellogo" path="{channelid}" x="8%" y="0" valign="center" width="{areawidth}/10" height="{areaheight}" />
+				<drawtext name="channelname" x="{areawidth}/4" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{channelname}" /> 
+				<drawtext name="starttime" x="{areawidth}/1.5" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{start} - {stop}" /> 
+				
+				<drawtext condition="{timerpartitial}" name="timerpartitial" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="t " /> 
+				<drawtext condition="{timerfull}" name="timerfull" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="T " /> 
+				<drawtext condition="{hasVPS}" name="vps" x="{posx(timerfull)}+{width(timerfull)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="V" /> 
+	</area>
+
+	<areascroll condition="{whatsonfavorites} ++ not{separator}" scrollelement="menutext" mode="carriagereturn" orientation="horizontal" delay="1000" scrollspeed="medium" x="45%" width="49%" layer="3">
+		<drawtext name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{title}" />	
+    </areascroll>
+ </areacontainer>	
+ <areacontainer condition="{current}">
+	<area condition="{whatsonfavorites} ++ not{separator}" x="1%" width="45%" layer="3">	
+		<drawtext name="channelnumber" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{channelnumber}" /> 
+				<drawimage name="logo" condition="{channellogoexists}++eq({menuschedules_logos}, 1)" imagetype="channellogo" path="{channelid}" x="8%" y="0" valign="center" width="{areawidth}/10" height="{areaheight}" />
+				<drawtext name="channelname" x="{areawidth}/4" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{channelname}" /> 
+				<drawtext name="starttime" x="{areawidth}/1.5" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{start} - {stop}" /> 
+				
+				<drawtext condition="{timerpartitial}" name="timerpartitial" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="t " /> 
+				<drawtext condition="{timerfull}" name="timerfull" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="T " /> 
+				<drawtext condition="{hasVPS}" name="vps" x="{posx(timerfull)}+{width(timerfull)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="V" /> 
+	</area>
+
+	<areascroll condition="{whatsonfavorites} ++ not{separator}" scrollelement="menutext" mode="carriagereturn" orientation="horizontal" delay="1000" scrollspeed="medium" x="45%" width="49%" layer="3">
+		<drawtext name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{title}" />	
+    </areascroll>
+ </areacontainer>	
+<!-- separator -->
+<area condition="{separator}" x="0%" width="76%" layer="4">
+      <drawtext x="0" y="0" font="{vdrOsd}" fontsize="95%" color="{clrTheme}" text="-------------{title}----------------------------------" />
+ </area>	
+	
+</listelement>
+ 
+<currentelement delay="{menuschedules_details_delay}" fadetime="{menuschedules_details_fadetime}" >
+<areacontainer condition="eq({menuschedules_details}, 1)">		 
+		<area x="0%" y="101%" width="100%" height="30%" layer="4">
+			   <drawrectangle x="0" y="0" width="{areawidth}" height="{areaheight}" color="{clrBlack}" />
+		   	   <drawimage name="info" imagetype="skinpart" path="info" x="4" y="4" width="{areawidth}-8" height="{areaheight}-8"/>
+		</area>
+		
+		
+		<area  x="0%" y="102%" width="40%" height="28%" layer="5">
+			
+			<drawtextvertical name="next" x="0" y="0" font="{vdrOsd}" fontsize="4%" direction="bottomup" valign="center" color="{clrTheme}" text="E P G" />
+			<drawimage name="poster" condition="{hasposter}" imagetype="image" path="{posterpath}" x="{width(next)}" y="0" valign="center" width="{areaheight}*0.7" height="{areaheight}" />
+			<drawtext name="title" x="{width(next)}+{width(poster)}*1.1" y="0" font="{vdrOsd}" fontsize="25%" color="{clrTheme}" text="{title}" />
+			<drawtext name="shorttext" x="{width(next)}+{width(poster)}*1.1" y="{height(title)}" width="96%" font="{vdrOsd}" fontsize="20%" color="{clrWhite}" text="{shorttext}" />
+			<drawtext name="start" x="{width(next)}+{width(poster)}*1.1" y="{height(now)}+{height(channame)}*1.1" font="{vdrOsd}" fontsize="13%" color="{clrWhite}" text="{presenteventstart} " />
+			<drawrectangle name="sb" x="{width(next)}+{width(poster)}*1.1" y="{posy(start)}+{height(start)}" width="{areawidth}" height="10" color="{clrBlack}" />
+			<drawimage imagetype="skinpart" path="header" x="{width(next)}+{width(poster)}*1.1+2" y="{posy(start)}+{height(start)}+2" width="{areawidth} * {presenteventelapsed} / {presenteventduration} - 20 * {presenteventelapsed} / {presenteventduration}-4" height="6" /> 
+			<drawtext name="stop" x="{areawidth}-{width(stop)}" y="{height(now)}+{height(channame)}*1.1" font="{vdrOsd}" fontsize="13%" color="{clrWhite}" text=" {presenteventstop}" />
+				
+		</area>
+		
+		
+		
+		<area x="42%" y="102%" width="35%" height="28%" layer="5">
+	
+			<drawtextvertical name="next" x="0" y="0" font="{vdrOsd}" fontsize="4%" direction="bottomup" valign="center" color="{clrTheme}" text="N E X T" />
+				<loop name="schedule" orientation="vertical" x="{width(next)}*1.1" y="0" columnwidth="{areawidth}" rowheight="{areaheight}/7" overflow="cut">
+					<drawtext name="start" x="0" y="0" font="{vdrOsd}" fontsize="15%" color="{clrWhite}" text="{schedule[start]} : {schedule[title]}" />
+				</loop>
+		</area>
+		
+		<area x="77%" y="102%" width="22%" height="28%" layer="5">
+			<drawtextvertical name="next" x="0" y="0" font="{vdrOsd}" fontsize="7%" direction="bottomup" valign="center" color="{clrTheme}" text="S I G N A L" />
+						
+			<drawimage condition="{channellogoexists}"  name="logo" imagetype="channellogo" path="{channelid}" x="0" y="0" align="right" width="{areaheight}/1.4" height="{areaheight}/1.9" />
+			<drawimage condition="{isSat}" name="icon" imagetype="icon" path="dvbs" x="{width(next)}*2.2" y="0" width="{areaheight}/1.4" height="{areaheight}/1.9" />
+			<drawimage condition="{isCable}" name="icon" imagetype="icon" path="dvbc" x="{width(next)}*2.2" y="0" width="{areaheight}/1.4" height="{areaheight}/1.9" />
+			<drawimage condition="{isTerr}" name="icon" imagetype="icon" path="dvbt" x="{width(next)}*2.2" y="0" width="{areaheight}/1.4" height="{areaheight}/1.9" />
+			<drawimage condition="{isAtsc}" name="icon" imagetype="icon" path="dvbatsc" x="{width(next)}*2.2" y="0" width="{areaheight}/1.4" height="{areaheight}/1.9" />
+		
+			<drawtext name="source" x="{width(next)}*1.1" y="{height(logo)}" font="{vdrOsd}" align="right" fontsize="15%" color="{clrWhite}" text="{source} - {sourcedescription}" />
+			<drawtext name="transponder" x="{width(next)}*1.1" y="{height(logo)}+{height(source)}" align="right" font="{vdrOsd}" fontsize="15%" color="{clrWhite}" text="{transponder} - {frequency}" />
+
+		</area>
+</areacontainer>
+		
+</currentelement>
+</menuitems>	
+
+
+<scrollbar>
+       <area x="99%" y="10%" width="1%" height="65%" layer="5">
+	       <drawrectangle x="0" y="0" width="{areawidth}" height="{areaheight}" color="{clrBlack}" />
+		
+          </area>
+         <area x="99%" y="10%" width="1%" height="65%" layer="6">
+		 
+            <drawimage imagetype="skinpart" path="header" x="3" y="{areaheight} * {offset} / 1000+3" width="{areawidth}/1.5" height="{areaheight} * {height} / 1000-6"/>
+        </area>
+</scrollbar>
+
+</menuschedules>

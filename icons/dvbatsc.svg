@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="600.23999"
+   height="241.03999"
+   id="svg3859"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="dvbt.svg">
+  <defs
+     id="defs3861">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3835">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1.17180336px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 263.99978,-0.07999996 0,112.07993996 -263.999857142857,0 0,-111.99994 z"
+         id="path3837"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccc" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4459">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 178.44294,612.66266 14.43287,244.19858 c 0,0 396.24829,6.99932 398.87246,3.11081 2.62415,-3.88851 -38.05034,-254.30871 -38.05034,-254.30871 z"
+         id="path4461"
+         inkscape:connector-curvature="0" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4490">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m -215.18118,597.88632 14.43288,244.19855 c 0,0 396.24828,6.99935 398.87245,3.11081 C 200.7483,841.30721 160.07381,590.887 160.07381,590.887 z"
+         id="path4492"
+         inkscape:connector-curvature="0" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="18.406235"
+     inkscape:cy="290.3557"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1005"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3864">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-811.32218)">
+    <g
+       id="g4441"
+       transform="matrix(1.2813997,0,0,1.7217143,-281.0539,-759.50484)">
+      <rect
+         y="912.36218"
+         x="340"
+         height="140"
+         width="140"
+         id="rect3894"
+         style="opacity:0.95;fill:#006fff;fill-opacity:0.78431373;fill-rule:nonzero;stroke:none" />
+      <path
+         d="m 396.23906,1032.3622 0,-83.08324 -37.33906,0 0,-16.91678 100,0 0,16.91678 -37.25322,0 0,83.08324 z"
+         id="path4438"
+         inkscape:connector-curvature="0"
+         style="font-size:144px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold" />
+    </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4445"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion4447"><rect
+           id="rect4449"
+           width="407.09146"
+           height="230.31477"
+           x="6.0609155"
+           y="9.7150602" /></flowRegion><flowPara
+         id="flowPara4451"></flowPara></flowRoot>    <text
+       xml:space="preserve"
+       style="font-size:250.69540405px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="15.838197"
+       y="807.13885"
+       id="text4453"
+       sodipodi:linespacing="125%"
+       transform="scale(0.76988616,1.2988933)"
+       clip-path="url(#clipPath4490)"><tspan
+         sodipodi:role="line"
+         id="tspan4455"
+         x="15.838197"
+         y="807.13885">ASC</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:250.69540405px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="15.838197"
+       y="807.13885"
+       id="text4453-1"
+       sodipodi:linespacing="125%"
+       transform="matrix(0.76988616,0,0,1.2988933,198.45135,-1.3895812e-5)"
+       clip-path="url(#clipPath4459)"><tspan
+         sodipodi:role="line"
+         id="tspan4455-7"
+         x="15.838197"
+         y="807.13885">ASC</tspan></text>
+  </g>
+</svg>

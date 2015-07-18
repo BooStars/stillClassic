@@ -1,0 +1,13 @@
+
+volumeicons
+audiotrack icons
+replay icon themable
+
+
+colors clrTheme
+
+
+
+check skinpreview
+
+fontsizes

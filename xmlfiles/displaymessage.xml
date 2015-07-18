@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE displaymessage SYSTEM "../../../dtd/displaymessage.dtd">
+
+<displaymessage x="0" y="95%" width="100%" height="5%" >
+
+<message>
+	  <area x="0" y="0%" width="100%" height="100%" layer="7">  
+		<drawrectangle x="0" y="0" width="{areawidth}" height="{areaheight}" color="{clrBlack}" />
+		
+		<drawimage condition="{warning}" name="button_yellow_new" imagetype="skinpart" path="button_yellow_new" x="3" y="3" width="{areawidth}-6" height="{areaheight}-6"/>
+		<drawimage condition="{error}" name="button_red_new" imagetype="skinpart" path="button_red_new" x="3" y="3" width="{areawidth}-6" height="{areaheight}-6"/>
+		<drawimage condition="{status}" name="button_green_new" imagetype="skinpart" path="button_green_new" x="3" y="3" width="{areawidth}-6" height="{areaheight}-6"/>
+		<drawimage condition="{info}" name="button_blue_new" imagetype="skinpart" path="button_blue_new" x="3" y="3" width="{areawidth}-6" height="{areaheight}-6"/>
+	
+	
+	</area>
+	<area x="0" y="0%" width="100%" height="100%" layer="7">    
+	
+		<drawtext condition="{warning}" align="center" valign="center" font="{vdrOsd}" fontsize="75%" color="{clrBlack}" text="{text}" />
+		<drawtext condition="{error}" align="center" valign="center" font="{vdrOsd}" fontsize="75%" color="{clrWhite}" text="{text}" />
+		<drawtext condition="{status}" align="center" valign="center" font="{vdrOsd}" fontsize="75%" color="{clrBlack}" text="{text}" />
+		<drawtext condition="{info}" align="center" valign="center" font="{vdrOsd}" fontsize="75%" color="{clrWhite}" text="{text}" />
+	</area>
+</message>
+</displaymessage>

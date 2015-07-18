@@ -1,0 +1,37 @@
+<menudetailedtext x="0" y="0" width="100%" height="100%" >
+<background>
+<!-- header background -->
+		<area x="0" y="0" width="100%" height="6%" layer="2">
+			<drawrectangle x="0" y="0" width="{areawidth}" height="{areaheight}" color="{clrBlack}" />
+			<drawimage imagetype="skinpart" path="header" x="3" y="3" width="{areawidth}-6" height="{areaheight}-6"/>
+	</area>
+
+	<!-- list background -->
+		<area x="0" y="0" width="100%" height="100%" layer="1">
+            <drawrectangle x="0" y="0" width="{areawidth}" height="{areaheight}" color="{clrTransBlack}" />
+	    </area>
+</background>		
+
+
+
+<datetime>
+	<area x="70%" y="0%" width="30%" height="6%" layer="3">
+		<drawtext name="dayname" x="0" y="0" align="right" valign="center" font="{vdrOsd}" fontsize="75%" color="{clrBlack}" text="{daynameshort} {day}. {monthnameshort}. {time} " />
+    </area>
+</datetime>
+
+<scrollbar>
+       <area x="99%" y="10%" width="1%" height="65%" layer="5">
+	       <drawrectangle x="0" y="0" width="{areawidth}" height="{areaheight}" color="{clrBlack}" />
+		
+          </area>
+         <area x="99%" y="10%" width="1%" height="65%" layer="6">
+		 
+            <drawimage imagetype="skinpart" path="header" x="3" y="{areaheight} * {offset} / 1000+3" width="{areawidth}/1.5" height="{areaheight} * {height} / 1000-6"/>
+        </area>
+</scrollbar>
+
+<tab name="text" x="1%" y="10%" width="96%" height="65%" layer="2" scrollheight="{areaheight}/4">
+	<drawtextbox x="0" y="0" width="{areawidth}" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{text}" />
+</tab>
+</menudetailedtext>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE displayaudiotracks SYSTEM "../../../dtd/displayaudiotracks.dtd">
+
+<displayaudiotracks x="0" y="0" width="100%" height="100%" >
+    <background>
+        <area x="0" y="{areaheight} - {numtracks} * {areaheight} / 15 - {areaheight} / 15" width="30%" height="{areaheight} / 15 + {areaheight} / 15 * {numtracks}" layer="1">
+      				<drawrectangle x="0" y="0" width="{areawidth}" height="{areaheight}" color="{clrBlack}" />
+			<drawimage imagetype="skinpart" path="info" x="3" y="3" width="{areawidth}-6" height="{areaheight}-6"/>
+        </area>
+    </background>
+
+    <header>
+        <area x="1%" y="{areaheight} - {numtracks} * {areaheight} / 15 - {areaheight} / 15" width="30%" height="{areaheight} / 15" layer="2">
+            <drawtext x="0" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrBlack}" text="{title}" />
+           </area>
+    </header>
+
+
+    <menuitems x="0" y="{areaheight} - {numelements} * {areaheight} / 15" orientation="vertical" width="100%" height="{numelements} * {areaheight} / 15" align="top" numlistelements="{numelements}">
+
+        <listelement>
+            <!-- Background -->
+            <area x="0%" width="30%" layer="2">
+				<drawrectangle condition="{current}" x="0" y="0" width="{areawidth}" height="{areaheight}" color="{clrBlack}" />
+				<drawimage condition="{current}" imagetype="skinpart" path="header" x="3" y="3" width="{areawidth}-6" height="{areaheight}-6"/>
+			</area>
+         
+            <area x="0%" width="30%" layer="3">
+                <drawtext condition="not{current}" x="1%" valign="center" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{title}" />
+				<drawtext condition="{current}" x="1%" valign="center" font="{vdrOsd}" fontsize="60%" color="{clrBlack}" text="{title}" />
+            </area>
+        </listelement>
+    </menuitems>
+
+</displayaudiotracks>

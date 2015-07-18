@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE displayvolume SYSTEM "../../../dtd/displayvolume.dtd">
+
+<displayvolume  x="0" y="96%" width="100%" height="5%" >
+<background>
+
+		<area x="0" y="0" width="100%" height="100%" layer="1">
+            <drawrectangle x="0" y="0" width="{areawidth}" height="{areaheight}" color="{clrTransBlack}" />
+	    </area>
+
+</background>
+
+<volume>
+	<area x="0" y="0%" width="100%" height="{areaheight}" layer="2">
+		         
+		<drawtext name="volume" x="0" valign="top" font="{vdrOsd}" fontsize="90%" color="{clrGreen}" text="{tr(volume)}: {printf('%02d',volpercent)}%" />
+																										
+		<drawrectangle x="18%" y="0" width="{areawidth}" height="{areaheight}" color="{clrWhite}" />
+		<drawrectangle x="18%" y="0" width="{volume}/{maxvolume}*{areawidth}"  height="{areaheight}" color="{clrGreen}" />
+	
+     </area>
+     
+	
+</volume>
+
+</displayvolume>
+
+
+	
