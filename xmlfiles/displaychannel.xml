@@ -38,18 +38,18 @@
     
 
 <epginfo>
-	<area x="0" y="85%" width="100%" height="15%" layer="2">
+	<area x="1%" y="85%" width="98%" height="15%" layer="2">
 		
 	    <drawtext name="start" x="{areawidth}*0.0025" y="0" font="{vdrOsd}" fontsize="25%" color="{clrWhite}" text="{currentstart}" />
 		 
 		
 		 
-		<drawtext name="title" x="{width(start)}+{width(start)}*0.25" y="0" width="{areawidth}-{width(startstop)}-{posx(title)}-{posx(start)}*2" font="{vdrOsd}" fontsize="25%" color="{clrTheme}" text="{currenttitle}"  />       
-		<drawtext name="subtitle" x="{width(start)}+{width(start)}*0.25" y="{posy(title)}+{height(title)}" width="{areawidth}-{width(startstop)}-{posx(title)}-{posx(start)}*2" font="{vdrOsd}" fontsize="25%" color="{clrYellow}" text="{currentsubtitle}"/>
+		<drawtext name="title" x="{width(start)}+{width(start)}*0.35" y="0" width="{areawidth}-{width(startstop)}-{posx(title)}-{posx(start)}*2" font="{vdrOsd}" fontsize="25%" color="{clrTheme}" text="{currenttitle}"  />       
+		<drawtext name="subtitle" x="{width(start)}+{width(start)}*0.35" y="{posy(title)}+{height(title)}" width="{areawidth}-{width(startstop)}-{posx(title)}-{posx(start)}*2" font="{vdrOsd}" fontsize="25%" color="{clrYellow}" text="{currentsubtitle}"/>
 		
 		<drawtext name="nextstart" x="{areawidth}*0.0025" y="{posy(subtitle)}+{height(subtitle)}" font="{vdrOsd}" fontsize="25%" color="{clrWhite}" text="{nextstart}" />
-        <drawtext name="nexttitle" x="{width(start)}+{width(start)}*0.25"  y="{posy(subtitle)}+{height(subtitle)}" font="{vdrOsd}" width="{areawidth} - {width(nextstartstop)} - {posx(nexttitle)} - {posx(nextstart)}*2" fontsize="25%" color="{clrTheme}" text="{nexttitle}"/>
-		<drawtext name="nextsubtitle" x="{width(start)}+{width(start)}*0.25"  y="{posy(nexttitle)}+{height(nexttitle)}" width="{areawidth} - {width(nextstartstop)} -{posx(nexttitle)}-{posx(nextstart)}*2" font="{vdrOsd}" fontsize="25%" color="{clrYellow}" text="{nextsubtitle}"/>
+        <drawtext name="nexttitle" x="{width(start)}+{width(start)}*0.35"  y="{posy(subtitle)}+{height(subtitle)}" font="{vdrOsd}" width="{areawidth} - {width(nextstartstop)} - {posx(nexttitle)} - {posx(nextstart)}*2" fontsize="25%" color="{clrTheme}" text="{nexttitle}"/>
+		<drawtext name="nextsubtitle" x="{width(start)}+{width(start)}*0.35"  y="{posy(nexttitle)}+{height(nexttitle)}" width="{areawidth} - {width(nextstartstop)} -{posx(nexttitle)}-{posx(nextstart)}*2" font="{vdrOsd}" fontsize="25%" color="{clrYellow}" text="{nextsubtitle}"/>
 		
 
 	
