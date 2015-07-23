@@ -15,9 +15,13 @@
    id="svg3767"
    version="1.1"
    inkscape:version="0.48.5 r10040"
-   sodipodi:docname="ico_repay_rew_off.svg">
+   sodipodi:docname="ico_repay_pause.svg">
   <defs
      id="defs3769">
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect3856"
+       effect="spiro" />
     <clipPath
        clipPathUnits="userSpaceOnUse"
        id="clipPath2988">
@@ -60,7 +64,7 @@
     <linearGradient
        id="linearGradient3929">
       <stop
-         style="stop-color:#ffffff;stop-opacity:0.68627453;"
+         style="stop-color:#ffffff;stop-opacity:0.52719665;"
          offset="0"
          id="stop3931" />
       <stop
@@ -68,37 +72,16 @@
          offset="1"
          id="stop3933" />
     </linearGradient>
-    <filter
-       color-interpolation-filters="sRGB"
-       inkscape:collect="always"
-       id="filter3945"
-       x="-0.0070301555"
-       width="1.0140603"
-       y="-0.3884618"
-       height="1.7769237">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="8.7831373"
-         id="feGaussianBlur3947" />
-    </filter>
     <linearGradient
        y2="1220.3998"
        x2="7882.6704"
        y1="848.50134"
        x1="-846.99457"
-       gradientTransform="translate(-18.634748,69.177544)"
+       gradientTransform="matrix(0.04036828,0,0,1.0854649,13.253358,-333.37987)"
        gradientUnits="userSpaceOnUse"
        id="linearGradient3033"
        xlink:href="#linearGradient3929"
        inkscape:collect="always" />
-    <filter
-       inkscape:collect="always"
-       id="filter4357">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="0.61439999"
-         id="feGaussianBlur4359" />
-    </filter>
     <clipPath
        clipPathUnits="userSpaceOnUse"
        id="clipPath3802-1">
@@ -121,6 +104,30 @@
          x="644.04382"
          y="278.01328" />
     </clipPath>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3809"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3809-4"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3809-1"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3809-4-7"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3809-1-1"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3809-4-7-7"
+       is_visible="true" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -130,8 +137,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
-     inkscape:cx="-25.071429"
-     inkscape:cy="53.162104"
+     inkscape:cx="-17.636773"
+     inkscape:cy="64.233533"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -159,39 +166,38 @@
      id="layer1"
      transform="translate(0,-924.36218)">
     <rect
-       style="fill:none;stroke:#ffffff;stroke-width:5.11999988999999990;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;opacity:0.5;filter:url(#filter4357)"
+       style="fill:none;stroke:#ffffff;stroke-width:5.11999988999999990;stroke-miterlimit:4;stroke-opacity:0.49803922;stroke-dasharray:none;opacity:1"
        id="rect3775"
        width="122.88"
        height="122.88"
        x="2.5599999"
        y="926.92218" />
     <path
-       transform="matrix(0.04644285,0,0,0.85365192,17.663712,-115.57843)"
-       style="fill:url(#linearGradient3033);fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;filter:url(#filter3945)"
-       d="m -249.44031,1229.9779 2998.44441,0 c -766.6884,54.2497 -2046.65296,27.6464 -2998.44441,54.2641 z"
+       style="fill:url(#linearGradient3033);fill-opacity:1;fill-rule:nonzero;stroke:none"
+       d="m 3.936136,926.6282 121.042014,0 C 94.028268,985.51435 42.358312,956.63741 3.936136,985.52997 z"
        id="rect3917"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc" />
     <g
-       id="g3030"
-       transform="matrix(0.86126536,0,0,0.87031821,22.001066,128.14994)"
-       style="fill:#ffffff;stroke:#000000;stroke-width:1.34676253;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none">
+       transform="translate(3e-6,1.9e-4)"
+       id="g3005"
+       style="fill:#8c8c8c;fill-opacity:1">
       <path
-         sodipodi:nodetypes="sccscsscccs"
-         clip-path="url(#clipPath3802-1)"
-         d="m 1288.678,637.8305 c 0,24.66667 -11,43.33333 -33,56 l -512.00003,288 c -9.33333,5.33333 -19.66667,8 -31,8 -11.33333,0 -22,-3 -32,-9 -21.33333,-12 -32,-30.33333 -32,-55 l 0,-576 c 0,-24.66667 10.66667,-43 32,-55 20.66667,-13.33333 41.66667,-13.66667 63,-1 l 512.00003,288 c 22,12.66667 33,31.33333 33,56 z"
-         id="path2993"
+         sodipodi:nodetypes="ccccccc"
          inkscape:connector-curvature="0"
-         style="fill:#ffffff;stroke:#000000;stroke-width:10.92554598;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-         transform="matrix(0.12978725,0,0,0.11707488,-61.588675,913.81381)" />
+         inkscape:original-d="m 42.8767,952.36323 29.311001,35.99396 -29.873119,35.99261 -14.209831,0.012 29.403291,-36.1605 -29.508044,-35.78881 z"
+         inkscape:path-effect="#path-effect3809-1-1"
+         id="path3807-4"
+         d="m 42.8767,952.36323 29.311001,35.99396 -29.873119,35.99261 -14.209831,0.012 29.403291,-36.1605 -29.508044,-35.78881 14.876702,-0.0493"
+         style="fill:#8c8c8c;fill-opacity:1" />
       <path
-         sodipodi:nodetypes="sccscsscccs"
-         clip-path="url(#clipPath3802-1-1)"
-         d="m 1288.678,637.8305 c 0,24.66667 -11,43.33333 -33,56 l -512.00003,288 c -9.33333,5.33333 -19.66667,8 -31,8 -11.33333,0 -22,-3 -32,-9 -21.33333,-12 -32,-30.33333 -32,-55 l 0,-576 c 0,-24.66667 10.66667,-43 32,-55 20.66667,-13.33333 41.66667,-13.66667 63,-1 l 512.00003,288 c 22,12.66667 33,31.33333 33,56 z"
-         id="path2993-4"
+         sodipodi:nodetypes="ccccccc"
          inkscape:connector-curvature="0"
-         style="fill:#ffffff;stroke:#000000;stroke-width:10.92554598;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-         transform="matrix(0.12978725,0,0,0.11707488,-91.79348,913.7618)" />
+         inkscape:original-d="m 70.688996,952.36218 29.311,35.99396 -29.873119,35.99256 -14.20983,0.012 29.40329,-36.16045 -29.508044,-35.78881 z"
+         inkscape:path-effect="#path-effect3809-4-7-7"
+         id="path3807-5-0"
+         d="m 70.688996,952.36218 29.311,35.99396 -29.873119,35.99256 -14.20983,0.012 29.40329,-36.16045 -29.508044,-35.78881 14.876703,-0.0493"
+         style="fill:#8c8c8c;fill-opacity:1" />
     </g>
   </g>
 </svg>

@@ -15,7 +15,7 @@
    id="svg3891"
    version="1.1"
    inkscape:version="0.48.5 r10040"
-   sodipodi:docname="button_yellow_new.svg">
+   sodipodi:docname="button_red_new.svg">
   <defs
      id="defs3893">
     <linearGradient
@@ -89,6 +89,15 @@
          stdDeviation="8.7831373"
          id="feGaussianBlur3947" />
     </filter>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3929"
+       id="linearGradient3023"
+       gradientUnits="userSpaceOnUse"
+       x1="-846.99457"
+       y1="848.50134"
+       x2="7882.6704"
+       y2="1220.3998" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -97,9 +106,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="11.313709"
-     inkscape:cx="-26.175176"
-     inkscape:cy="17.839212"
+     inkscape:zoom="2.8284273"
+     inkscape:cx="164.32379"
+     inkscape:cy="61.22583"
      inkscape:document-units="px"
      inkscape:current-layer="g3899"
      showgrid="false"
@@ -118,7 +127,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -130,16 +139,20 @@
     <g
        transform="matrix(0.64033204,0,0,0.47913856,147.79219,464.17794)"
        id="g3899">
-      <path
-         style="opacity:0.80000000000000004;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1"
-         d="m -230.80556,1160.8005 2998.44436,0 0,66.7866 -2998.44436,0 z"
-         id="rect3030" />
-      <path
-         style="fill:url(#linearGradient3935);fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;filter:url(#filter3945)"
-         d="m -230.80556,1160.8004 2998.44436,0 c -766.6884,54.2497 -2046.65291,27.6464 -2998.44436,54.2641 z"
-         id="rect3917"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="cccc" />
+      <g
+         id="g3025">
+        <path
+           id="rect3030"
+           d="m -230.80556,1160.8005 2998.44436,0 0,66.7866 -2998.44436,0 z"
+           style="opacity:0.80000000000000004;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1" />
+        <path
+           transform="matrix(1,0,0,1.1953461,-0.55214069,-246.21287)"
+           sodipodi:nodetypes="cccc"
+           inkscape:connector-curvature="0"
+           id="rect3917"
+           d="m -230.80556,1160.8004 2998.44436,0 c -766.6884,54.2497 -2046.65291,27.6464 -2998.44436,54.2641 z"
+           style="fill:url(#linearGradient3023);fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;filter:url(#filter3945)" />
+      </g>
     </g>
   </g>
 </svg>

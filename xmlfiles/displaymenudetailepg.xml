@@ -32,7 +32,7 @@
 
 	<area x="1%" y="7%" width="98%" height="20%" layer="2">
 	
-		<drawtext name="datetime" x="0" y="0" font="{vdrOsd}" fontsize="22%" color="{clrWhite}" text="{day} {date} {start} - {stop} ({duration} mins)" />
+		<drawtext name="datetime" x="0" y="0" font="{vdrOsd}" fontsize="22%" color="{clrWhite}" text="{day} {date} {start} - {stop} ({duration} min)" />
 			
 		<drawtext name="title" x="0" width="{areawidth}" y="{height(datetime)}+10" font="{vdrOsd}" fontsize="20%" color="{clrTheme}" text="{title}" />
 		<drawtext name="shorttext" x="0" y="{posy(title)} + {height(title)}" font="{vdrOsd}" fontsize="20%" color="{clrWhite}" text="{shorttext}" />
@@ -48,7 +48,7 @@
           </area>
          <area x="99%" y="10%" width="1%" height="65%" layer="6">
 		 
-            <drawimage imagetype="skinpart" path="header" x="3" y="{areaheight} * {offset} / 1000+3" width="{areawidth}/1.5" height="{areaheight} * {height} / 1000-6"/>
+            <drawimage imagetype="skinpart" path="scrollbar" x="3" y="{areaheight} * {offset} / 1000+3" width="{areawidth}/1.5" height="{areaheight} * {height} / 1000-6"/>
         </area>
 </scrollbar>
 
@@ -126,11 +126,17 @@
 	
   
 <tablabels>
+
 	<area x="0" y="85%" width="93%" height="5%" layer="1">
 		<loop name="tabs" x="0" y="0" orientation="horizontal">
 			<drawrectangle x="0" y="0" width="{width(label)}" height="{areaheight}" color="{clrBlack}" />
 			<drawimage condition="{tabs[current]}" name="header" imagetype="skinpart" path="header" x="2" y="2" width="{width(label)}-4" height="{areaheight}-4"/>
 			<drawimage condition="not{tabs[current]}" name="info" imagetype="skinpart" path="info" x="2" y="2" width="{width(label)}-4" height="{areaheight}-4"/>
+			<drawtext name="label" x="0" valign="center" font="{vdrOsd}" fontsize="65%" color="{clrTransparent}" text="  {tabs[title]}  " />
+		</loop>
+	</area>
+	<area x="0" y="85%" width="93%" height="5%" layer="3">
+		<loop name="tabs" x="0" y="0" orientation="horizontal">
 			<drawtext condition="not{tabs[current]}" name="label" x="0" valign="center" font="{vdrOsd}" fontsize="65%" color="{clrWhite}" text="  {tabs[title]}  " />
 			<drawtext condition="{tabs[current]}" name="label" x="0" valign="center" font="{vdrOsd}" fontsize="65%" color="{clrBlack}" text="  {tabs[title]}  " />
 		</loop>

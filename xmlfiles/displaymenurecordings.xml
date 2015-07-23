@@ -46,7 +46,9 @@
 		<drawtext condition="not{folder}" name="date" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{printf('%02d.%02d.%d', daynumeric, month, year)}" />	
 		<drawtext condition="not{folder}" name="date" x="12%" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{time}" />	
 		<drawtext condition="not{folder}" name="date" x="20%" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{durationhours}:{durationminutes}" />	
+		
 		<drawtext condition="not{folder}++{new}" name="new" x="24%" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="*" />	
+		<drawtext condition="not{folder}++{cutted}" name="cutted" x="25%" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="%" />	
 			
 	</area>
 	
@@ -65,6 +67,8 @@
 		<drawtext condition="not{folder}" name="date" x="12%" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{time}" />	
 		<drawtext condition="not{folder}" name="date" x="20%" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{durationhours}:{durationminutes}" />	
 		<drawtext condition="not{folder}++{new}" name="new" x="24%" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="*" />	
+		<drawtext condition="not{folder}++{cutted}" name="cutted" x="25%" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="%" />	
+		
 	</area>
 	
 		<areascroll  scrollelement="title" mode="carriagereturn" orientation="horizontal" delay="1000" scrollspeed="medium" x="30%" width="59%" layer="2">
@@ -75,10 +79,73 @@
 
 
 
-<currentelement delay="250" >
+<currentelement delay="{menurecordings_details_delay}" fadetime="{menurecordings_details_fadetime}" >
+<areacontainer condition="eq({menurecordings_details}, 1)">		 
+		<area x="0%" y="101%" width="100%" height="30%" layer="4">
+			   <drawrectangle x="0" y="0" width="{areawidth}" height="{areaheight}" color="{clrBlack}" />
+		   	   <drawimage name="info" imagetype="skinpart" path="info" x="4" y="4" width="{areawidth}-8" height="{areaheight}-8"/>
+		</area>
+		
+		
+		<area condition="{hasposter}" x="0%" y="102%" width="40%" height="28%" layer="5">
+			
+			<drawtextvertical name="next" x="0" y="0" font="{vdrOsd}" fontsize="4%" direction="bottomup" valign="center" color="{clrTheme}" text="E P G" />
+			<drawimage name="poster" condition="{hasposter}" imagetype="image" path="{posterpath}" x="{width(next)}" y="0" valign="center" width="{areaheight}*0.7" height="{areaheight}" />
+			<drawtext name="recname" x="{width(next)}+{width(poster)}*1.1" y="0" font="{vdrOsd}" fontsize="25%" color="{clrTheme}" text="{name}" />
+			<drawtext name="shorttext" x="{width(next)}+{width(poster)}*1.1" y="{height(recname)}" width="96%" font="{vdrOsd}" fontsize="20%" color="{clrWhite}" text="{shorttext}" />
+			
 
-	
+			<drawtext condition="{folder}" name="numrecordingsfolder" x="{width(next)}+{width(poster)}*1.1" y="{posy(shorttext)}+{height(shorttext)}+10" width="96%" font="{vdrOsd}" fontsize="15%" color="{clrWhite}" text="Gesamt: {numrecordingsfolder}" />
+			<drawtext condition="{folder}" name="newrecordingsfolder" x="{width(next)}+{width(poster)}*1.1" y="{posy(numrecordingsfolder)}+{height(numrecordingsfolder)}-10" width="96%" font="{vdrOsd}" fontsize="15%" color="{clrWhite}" text="Neu: {newrecordingsfolder}" />
+			
+			<drawtext condition="not{folder}" name="numrecordingsfolder" x="{width(next)}+{width(poster)}*1.1" y="{posy(shorttext)}+{height(shorttext)}+10" width="96%" font="{vdrOsd}" fontsize="15%" color="{clrWhite}" text="{tr(date)}: {printf('%02d.%02d.%d', daynumeric, month, year)} - {time}" />
+			<drawtext condition="not{folder}" name="newrecordingsfolder" x="{width(next)}+{width(poster)}*1.1" y="{posy(numrecordingsfolder)}+{height(numrecordingsfolder)}-10" width="96%" font="{vdrOsd}" fontsize="15%" color="{clrWhite}" text="{tr(duration)}: {duration} min" />
 
+		
+			<drawimage condition="{new}" name="ico_new" imagetype="icon" path="ico_new" x="{posx(poster)}+{width(poster)}*1.1" y="0" valign="bottom" width="{areaheight}/5" height="{areaheight}/5" />
+			<drawimage condition="{cutted}++{new}" name="ico_cutted" imagetype="icon" path="ico_cutted" x="{posx(ico_new)}+{width(ico_new)}" y="0" valign="bottom" width="{areaheight}/5" height="{areaheight}/5" />
+			<drawimage condition="{cutted}++not{new}" name="ico_cutted" imagetype="icon" path="ico_cutted" x="{posx(poster)}+{width(poster)}*1.1" y="0" valign="bottom" width="{areaheight}/5" height="{areaheight}/5" />
+		
+		<!--<drawimage condition="{percentseen}" name="icon" imagetype="icon" path="{seen/percentseen}" x="{width(next)}" y="0" valign="center" width="{areaheight}*0.7" height="{areaheight}" />
+			<drawimage condition="{watched}" name="icon" imagetype="icon" path="{watched}" x="{width(next)}" y="0" valign="center" width="{areaheight}*0.7" height="{areaheight}" />
+			<drawtext condition="{cutted}" name="new" x="24%" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="*" />	
+		
+		-->
+	  
+		</area>
+		
+		<area condition="not{hasposter}" x="0%" y="102%" width="40%" height="28%" layer="5">
+			
+			<drawtextvertical name="next" x="0" y="0" font="{vdrOsd}" fontsize="4%" direction="bottomup" valign="center" color="{clrTheme}" text="E P G" />
+			<drawtext name="recname" x="{width(next)}*1.1" y="0" font="{vdrOsd}" fontsize="25%" color="{clrTheme}" text="{name}" />
+			<drawtext name="shorttext" x="{width(next)}*1.1" y="{height(recname)}" width="96%" font="{vdrOsd}" fontsize="20%" color="{clrWhite}" text="{shorttext}" />
+			
+			<drawtext condition="{folder}" name="numrecordingsfolder" x="{width(next)}*1.1" y="{posy(shorttext)}+{height(shorttext)}+10" width="96%" font="{vdrOsd}" fontsize="15%" color="{clrWhite}" text="Gesamt: {numrecordingsfolder}" />
+			<drawtext condition="{folder}" name="newrecordingsfolder" x="{width(next)}*1.1" y="{posy(numrecordingsfolder)}+{height(numrecordingsfolder)}-10" width="96%" font="{vdrOsd}" fontsize="15%" color="{clrWhite}" text="Neu: {newrecordingsfolder}" />
+			<drawtext condition="not{folder}" name="numrecordingsfolder" x="{width(next)}*1.1" y="{posy(shorttext)}+{height(shorttext)}+10" width="96%" font="{vdrOsd}" fontsize="15%" color="{clrWhite}" text="{tr(date)}: {printf('%02d.%02d.%d', daynumeric, month, year)} - {time}" />
+			<drawtext condition="not{folder}" name="newrecordingsfolder" x="{width(next)}*1.1" y="{posy(numrecordingsfolder)}+{height(numrecordingsfolder)}-10" width="96%" font="{vdrOsd}" fontsize="15%" color="{clrWhite}" text="{tr(duration)}: {duration} min" />
+
+			<drawimage condition="{new}" name="ico_new" imagetype="icon" path="ico_new" x="{width(next)}*1.1" y="0" valign="bottom" width="{areaheight}/5" height="{areaheight}/5" />
+			<drawimage condition="{cutted}++{new}" name="ico_cutted" imagetype="icon" path="ico_cutted" x="{posx(ico_new)}+{width(ico_new)}" y="0" valign="bottom" width="{areaheight}/5" height="{areaheight}/5" />
+			<drawimage condition="{cutted}++not{new}" name="ico_cutted" imagetype="icon" path="ico_cutted" x="{width(next)}*1.1" y="0" valign="bottom" width="{areaheight}/5" height="{areaheight}/5" />
+		
+					
+		</area>
+		
+		<area x="42%" y="102%" width="35%" height="28%" layer="5">
+			<drawtextvertical name="next" x="0" y="0" font="{vdrOsd}" fontsize="4%" direction="bottomup" valign="center" color="{clrTheme}" text="D E T A I L S" />
+		</area>
+
+		<areascroll scrollelement="description" mode="forthandback" orientation="vertical" delay="1000" scrollspeed="medium" x="42%" y="102%" width="33%" height="28%" layer="5">
+			<drawtextbox name="description" x="{width(next)}" y="0" width="100%" float="topright" font="{vdrOsd}" fontsize="13%" color="{clrWhite}" text="{description}" />
+		</areascroll>
+		
+		
+	<!--	<area x="77%" y="102%" width="22%" height="28%" layer="5">
+			<drawtextvertical name="next" x="0" y="0" font="{vdrOsd}" fontsize="7%" direction="bottomup" valign="center" color="{clrTheme}" text="I N F O" />
+		</area>-->	
+</areacontainer>
+		
 </currentelement>
 </menuitems>
 
@@ -89,7 +156,7 @@
           </area>
          <area x="99%" y="10%" width="1%" height="65%" layer="6">
 		 
-            <drawimage imagetype="skinpart" path="header" x="3" y="{areaheight} * {offset} / 1000+3" width="{areawidth}/1.5" height="{areaheight} * {height} / 1000-6"/>
+            <drawimage imagetype="skinpart" path="scrollbar" x="3" y="{areaheight} * {offset} / 1000+3" width="{areawidth}/1.5" height="{areaheight} * {height} / 1000-6"/>
         </area>
 </scrollbar>
 	

@@ -46,13 +46,16 @@
              <drawimage condition="{flagrecording}" name="active" imagetype="icon" path="ico_timer_recording" x="0" width="0.9*{areaheight}" height="0.9*{areaheight}" valign="center" />
 		
 			 <drawtext name="channelnumber" x="{areaheight}*2" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{channelnumber}" />
-			 <drawtext name="timerday" x="{areaheight}*5" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{dayname} {day}" />	
-			 <drawtext name="timerstart" x="{areaheight}*10" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{timerstart}" />
-			 <drawtext name="timerstop" x="{areaheight}*13" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{timerstop}" />
+			 
+			 <drawimage name="logo" condition="{channellogoexists}++eq({menutimers_logos}, 1)" imagetype="channellogo" path="{channelid}" x="8%" y="0" valign="center" width="{areawidth}/17" height="{areaheight}" />
+				
+			 <drawtext name="timerday" x="{areaheight}*8" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{dayname} {day}" />	
+			 <drawtext name="timerstart" x="{areaheight}*12" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{timerstart}" />
+			 <drawtext name="timerstop" x="{areaheight}*15" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{timerstop}" />
 
 		</area>
 
-	<areascroll scrollelement="timertext" mode="carriagereturn" orientation="horizontal" delay="1000" scrollspeed="medium" x="35%" width="59%" layer="3">
+	<areascroll scrollelement="timertext" mode="carriagereturn" orientation="horizontal" delay="1000" scrollspeed="medium" x="37%" width="57%" layer="3">
 			<drawtext name="timertext" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{title}" />
 	</areascroll>
  </areacontainer> 
@@ -65,17 +68,67 @@
              <drawimage condition="{flagrecording}" name="active" imagetype="icon" path="ico_timer_recording" x="0" width="0.9*{areaheight}" height="0.9*{areaheight}" valign="center" />
 		
 			 <drawtext name="channelnumber" x="{areaheight}*2" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{channelnumber}" />
-			 <drawtext name="timerday" x="{areaheight}*5" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{dayname} {day}" />	
-			 <drawtext name="timerstart" x="{areaheight}*10" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{timerstart}" />
-			 <drawtext name="timerstop" x="{areaheight}*13" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{timerstop}" />
+			 <drawimage name="logo" condition="{channellogoexists}++eq({menutimers_logos}, 1)" imagetype="channellogo" path="{channelid}" x="8%" y="0" valign="center" width="{areawidth}/17" height="{areaheight}" />
+				
+			 <drawtext name="timerday" x="{areaheight}*8" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{dayname} {day}" />	
+			 <drawtext name="timerstart" x="{areaheight}*12" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{timerstart}" />
+			 <drawtext name="timerstop" x="{areaheight}*15" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{timerstop}" />
 
 		</area>
 
-	<areascroll scrollelement="timertext" mode="carriagereturn" orientation="horizontal" delay="1000" scrollspeed="medium" x="35%" width="59%" layer="3">
+	<areascroll scrollelement="timertext" mode="carriagereturn" orientation="horizontal" delay="1000" scrollspeed="medium" x="37%" width="57%" layer="3">
 			<drawtext name="timertext" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{title}" />
 	</areascroll>
  </areacontainer> 
 </listelement>
+<currentelement delay="{menutimers_details_delay}" fadetime="{menutimers_details_fadetime}" >
+<areacontainer condition="eq({menutimers_details}, 1)">		 
+		<area x="0%" y="101%" width="100%" height="30%" layer="4">
+			   <drawrectangle x="0" y="0" width="{areawidth}" height="{areaheight}" color="{clrBlack}" />
+		   	   <drawimage name="info" imagetype="skinpart" path="info" x="4" y="4" width="{areawidth}-8" height="{areaheight}-8"/>
+		</area>
+		
+		
+		<area condition="{hasposter}"  x="0%" y="102%" width="40%" height="28%" layer="5">
+			
+			<drawtextvertical name="next" x="0" y="0" font="{vdrOsd}" fontsize="4%" direction="bottomup" valign="center" color="{clrTheme}" text="E P G" />
+			<drawimage name="poster" condition="{hasposter}" imagetype="image" path="{posterpath}" x="{width(next)}" y="0" valign="center" width="{areaheight}*0.7" height="{areaheight}" />
+			<drawtext name="timerstart" x="{width(next)}+{width(poster)}*1.1" y="0" font="{vdrOsd}" fontsize="25%" color="{clrTheme}" text="{title}" />
+			<drawtext name="eventshorttext" x="{width(next)}+{width(poster)}*1.1" y="{height(title)}" width="96%" font="{vdrOsd}" fontsize="20%" color="{clrWhite}" text="{eventshorttext}" />
+				
+			<drawtext x="{width(next)}+{width(poster)}*1.1" y="{posy(eventshorttext)}+{height(eventshorttext)}*1.1" font="{vdrOsd}" fontsize="13%" color="{clrWhite}" text="{timerstart} - {timerstart}" />
+	
+			
+		</area>
+		<area condition="not{hasposter}" x="0%" y="102%" width="40%" height="28%" layer="5">
+			
+			<drawtextvertical name="next" x="0" y="0" font="{vdrOsd}" fontsize="4%" direction="bottomup" valign="center" color="{clrTheme}" text="E P G" />
+			<drawtext name="title" x="{width(next)}*1.1" y="0" font="{vdrOsd}" fontsize="25%" color="{clrTheme}" text="{title}" />
+			<drawtext name="eventshorttext" x="{width(next)}*1.1" y="{height(title)}" width="96%" font="{vdrOsd}" fontsize="20%" color="{clrWhite}" text="{eventshorttext}" />
+				
+			<drawtext x="{width(next)}*1.1" y="{posy(eventshorttext)}+{height(eventshorttext)}*1.1" font="{vdrOsd}" fontsize="13%" color="{clrWhite}" text="{timerstart} - {timerstart}" />
+			
+		</area>
+		
+		
+		<area x="42%" y="102%" width="35%" height="28%" layer="5">
+			<drawtextvertical name="next" x="0" y="0" font="{vdrOsd}" fontsize="4%" direction="bottomup" valign="center" color="{clrTheme}" text="D E T A I L S" />
+		</area>
+
+		<areascroll scrollelement="eventdescription" mode="forthandback" orientation="vertical" delay="1000" scrollspeed="medium" x="42%" y="102%" width="33%" height="28%" layer="5">
+			<drawtextbox name="eventdescription" x="{width(next)}" y="0" width="100%" float="topright" font="{vdrOsd}" fontsize="13%" color="{clrWhite}" text="{eventdescription}" />
+		</areascroll>
+		
+		
+		<area x="77%" y="102%" width="22%" height="28%" layer="5">
+			<drawtextvertical name="next" x="0" y="0" font="{vdrOsd}" fontsize="7%" direction="bottomup" valign="center" color="{clrTheme}" text="L O G O" />
+						
+			<drawimage condition="{channellogoexists}"  name="logo" imagetype="channellogo" path="{channelid}" x="0" y="0" align="center" width="{areaheight}" height="{areaheight}" />
+		
+		</area>
+</areacontainer>
+		
+</currentelement>
 </menuitems>
 
 <scrollbar>
@@ -85,7 +138,7 @@
           </area>
          <area x="99%" y="10%" width="1%" height="65%" layer="6">
 		 
-            <drawimage imagetype="skinpart" path="header" x="3" y="{areaheight} * {offset} / 1000+3" width="{areawidth}/1.5" height="{areaheight} * {height} / 1000-6"/>
+            <drawimage imagetype="skinpart" path="scrollbar" x="3" y="{areaheight} * {offset} / 1000+3" width="{areawidth}/1.5" height="{areaheight} * {height} / 1000-6"/>
         </area>
 </scrollbar>  
 

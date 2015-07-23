@@ -3,11 +3,13 @@
 
 
 <globals>
-    <!--
+    <!--8865c2e4
     define all your needed colors here 00ffff
     -->
     <colors>
 		<color name="clrTheme">FF65c2e4</color>
+		<color name="clrThemeTrans">7500ffff</color>
+		
 		<color name="clrIcon">b200ffff</color>
 		
 		

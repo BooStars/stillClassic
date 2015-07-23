@@ -33,23 +33,28 @@
 	 <area x="0" y="80%" width="100%" height="5%" layer="2">
 		<drawtext name="channelname" x="0" y="0" align="left" valign="center" font="{vdrOsd}" fontsize="95%" color="{clrWhite}" text="{channelnumber}  {channelname}" />
 	  </area>
+	  <area condition="eq({channel_logos}, 1)" x="75%" y="85%" width="25%" height="10%" layer="2">
+            <drawimage name="logo" cache="true" condition="{channellogoexists}" imagetype="channellogo" path="{channelid}" valign="center" x="{areawidth}-{width(logo)}-10" y="0" width="{areawidth}/2-10" height="{areaheight}" />
+            <drawtext condition="not{channellogoexists}" align="right" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrWhite}" text="{channelnumber}" />
+       </area>
 
     </channelinfo>
     
 
 <epginfo>
-	<area x="1%" y="85%" width="98%" height="15%" layer="2">
+	<area x="1%" y="85%" width="75%" height="15%" layer="2">
 		
 	    <drawtext name="start" x="{areawidth}*0.0025" y="0" font="{vdrOsd}" fontsize="25%" color="{clrWhite}" text="{currentstart}" />
 		 
 		
 		 
-		<drawtext name="title" x="{width(start)}+{width(start)}*0.35" y="0" width="{areawidth}-{width(startstop)}-{posx(title)}-{posx(start)}*2" font="{vdrOsd}" fontsize="25%" color="{clrTheme}" text="{currenttitle}"  />       
-		<drawtext name="subtitle" x="{width(start)}+{width(start)}*0.35" y="{posy(title)}+{height(title)}" width="{areawidth}-{width(startstop)}-{posx(title)}-{posx(start)}*2" font="{vdrOsd}" fontsize="25%" color="{clrYellow}" text="{currentsubtitle}"/>
+		<drawtext name="title" x="{width(start)}+{width(start)}*0.35" y="0" font="{vdrOsd}" fontsize="25%" color="{clrTheme}" text="{currenttitle}"  />       
+		<drawtext name="subtitle" x="{width(start)}+{width(start)}*0.35" y="{posy(title)}+{height(title)}"  font="{vdrOsd}" fontsize="25%" color="{clrYellow}" text="{currentsubtitle}"/>
 		
 		<drawtext name="nextstart" x="{areawidth}*0.0025" y="{posy(subtitle)}+{height(subtitle)}" font="{vdrOsd}" fontsize="25%" color="{clrWhite}" text="{nextstart}" />
-        <drawtext name="nexttitle" x="{width(start)}+{width(start)}*0.35"  y="{posy(subtitle)}+{height(subtitle)}" font="{vdrOsd}" width="{areawidth} - {width(nextstartstop)} - {posx(nexttitle)} - {posx(nextstart)}*2" fontsize="25%" color="{clrTheme}" text="{nexttitle}"/>
-		<drawtext name="nextsubtitle" x="{width(start)}+{width(start)}*0.35"  y="{posy(nexttitle)}+{height(nexttitle)}" width="{areawidth} - {width(nextstartstop)} -{posx(nexttitle)}-{posx(nextstart)}*2" font="{vdrOsd}" fontsize="25%" color="{clrYellow}" text="{nextsubtitle}"/>
+        <drawtext name="nexttitle" x="{width(start)}+{width(start)}*0.35"  y="{posy(subtitle)}+{height(subtitle)}" font="{vdrOsd}"  fontsize="25%" color="{clrTheme}" text="{nexttitle}"/>
+		<drawtext condition="eq({channel_signal},0)" name="nextsubtitle" x="{width(start)}+{width(start)}*0.35" y="{posy(nexttitle)}+{height(nexttitle)}" width="{areawidth}" font="{vdrOsd}" fontsize="25%" color="{clrYellow}" text="{nextsubtitle}"/>
+		<drawtext condition="eq({channel_signal},1)" name="nextsubtitle" x="{width(start)}+{width(start)}*0.35" y="{posy(nexttitle)}+{height(nexttitle)}" width="{areawidth}/1.4" font="{vdrOsd}" fontsize="25%" color="{clrYellow}" text="{nextsubtitle}"/>
 		
 
 	
@@ -62,10 +67,42 @@
 </progressbar>
 
 <screenresolution>
+	<area x="35%" y="94%" width="65%" height="8%" layer="2">
+		<drawimage name="res" condition="eq({screenheight},1080)" imagetype="icon" path="ico_channel_1080_on" align="right" valign="center" width="{areawidth}/22" height="{areaheight}/3" />
+		<drawimage name="res" condition="eq({screenheight},720)" imagetype="icon" path="ico_channel_720_on" align="right" valign="center" width="{areawidth}/22" height="{areaheight}/3" />
+		<drawimage name="res" condition="eq({screenheight},576)" imagetype="icon" path="ico_channel_576_on" align="right" valign="center" width="{areawidth}/22" height="{areaheight}/3" />
+		
+		<drawimage name="aspect" condition="eq({aspect},16:9)" imagetype="icon" path="ico_channel_169_on" x="{areawidth} - {width(res)}*2" valign="center" width="{areawidth}/22" height="{areaheight}/3" />
+		<drawimage name="aspect" condition="eq({aspect},4:3)" imagetype="icon" path="ico_channel_43_on" x="{areawidth} - {width(res)}*2" valign="center" width="{areawidth}/22" height="{areaheight}/3" />
+		
+		<drawimage name="hd" condition="{isHD}" imagetype="icon" path="ico_channel_hdtv_on" x="{areawidth} - {width(res)}*3" valign="center" width="{areawidth}/22" height="{areaheight}/3" />
+		<drawimage name="hd" condition="not{isHD}" imagetype="icon" path="ico_channel_sdtv_on" x="{areawidth} - {width(res)}*3" valign="center" width="{areawidth}/22" height="{areaheight}/3" />
+	</area>
 	</screenresolution>
 
 <statusinfo>
+<area x="35%" y="94%" width="65%" height="8%" layer="2">
+	<!--  encrypted / decrypted icon -->
+		<drawimage name="enc" condition="{isEncrypted}" imagetype="icon" path="ico_channel_encrypted_on" x="{areawidth} - {width(enc)}*4" valign="center" width="{areawidth}/22" height="{areaheight}/3" />
+		<drawimage condition="not{isEncrypted}" imagetype="icon" path="ico_channel_encrypted_off" x="{areawidth} - {width(enc)}*4" valign="center" width="{areawidth}/22" height="{areaheight}/3" />
+	<!-- dolby icon -->
+		<drawimage name="dolby" condition="{isDolby}" imagetype="icon" path="ico_channel_dolbydigital_on" x="{posx(enc)} - {width(enc)}"  valign="center" width="{areawidth}/22" height="{areaheight}/3" />
+        <drawimage name="dolby" condition="not{isDolby}" imagetype="icon" path="ico_channel_stero_on" x="{posx(enc)} - {width(enc)}" valign="center" width="{areawidth}/22" height="{areaheight}/3" />
+	<!-- videotext icon -->
+		<drawimage name="txt" condition="{hasVT}" imagetype="icon" path="ico_channel_teletext_on" x="{posx(dolby)} - {width(dolby)}"  valign="center" width="{areawidth}/22" height="{areaheight}/3" />
+		<drawimage name="txt" condition="not{hasVT}" imagetype="icon" path="ico_channel_teletext_off" x="{posx(dolby)} - {width(dolby)}"  valign="center" width="{areawidth}/22" height="{areaheight}/3" />
 	
+		
+	<!-- recording icon -->
+		<drawimage name="rec" condition="{isRecording}" imagetype="icon" path="ico_channel_rec_on" x="{posx(txt)} - {width(txt)}"  valign="center" width="{areawidth}/22" height="{areaheight}/3" />
+		<drawimage name="rec" condition="not{isRecording}" imagetype="icon" path="ico_channel_rec_off" x="{posx(txt)} - {width(txt)}"  valign="center" width="{areawidth}/22" height="{areaheight}/3" />
+		
+	<!-- last icon 
+		<drawimage name="rec" condition="{isRecording}" imagetype="icon" path="rec" x="{posx(rec)} - {width(rec)}"  valign="center" width="{areawidth}/13" height="100%" />
+		<drawimage condition="not{isRecording}" imagetype="icon" path="rec_off" x="{posx(rec)} - {width(rec)}"  valign="center" width="{areawidth}/13" height="100%" />  
+	-->
+	
+		</area>
 	
 </statusinfo>
 	
@@ -73,6 +110,7 @@
 <audioinfo>
 
 </audioinfo>
+
 
    
     <channelgroup>
@@ -87,11 +125,20 @@
     </channelgroup>
 
 <signalquality>
-	
+	<area condition="eq({channel_signal},1)" x="61%" y="94%" width="15%" height="8%" layer="3">
+		<drawrectangle x="{areawidth}*{signalstrength}/100" y="30%" width="{areawidth} - {areawidth}*{signalstrength}/100" height="{areaheight}/6" color="{clrTransBlack}" />
+        <drawrectangle x="{areawidth}*{signalquality}/100" y="50%" width="{areawidth} - {areawidth}*{signalquality}/100" height="{areaheight}/6" color="{clrTransBlack}" />
+	</area>
 </signalquality>
 
 <signalqualityback>
-	
+	<area condition="eq({channel_signal},1)" x="35%" y="94%" width="65%" height="8%" layer="2">
+		<drawimage name="ico_channel_signal_on" imagetype="icon" path="ico_channel_signal_on" x="{areawidth} - {areawidth}/22*8" valign="center" width="{areawidth}/22" height="{areaheight}/3" />
+	</area>
+    <area condition="eq({channel_signal},1)" x="61%" y="94%" width="15%" height="8%" layer="2">
+    	 <drawimage name="signal1" imagetype="skinpart" path="signal" x="00%" y="30%" valign="top" width="100%" height="{areaheight}/6" />
+		 <drawimage imagetype="skinpart" path="signal" x="0" y="50%" width="100%" height="{areaheight}/6" />
+    </area>
 </signalqualityback>
 
   <message>

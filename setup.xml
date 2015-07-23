@@ -13,7 +13,7 @@
     The configured parameter value is the default value.
     -->
     <menu>
-<!-- CHANNEL -->
+<!-- CHANNELSmenu -->
 		<submenu name="menuchannels" displaytext="{tr(menuchannels)}">
 			<parameter type="bool" name="menuchannels_logos" displaytext="{tr(menuchannels_logos)}">0</parameter>
 			<parameter type="bool" name="menuchannels_details" displaytext="{tr(menuchannels_details)}">0</parameter>
@@ -25,18 +25,89 @@
 <!-- SCHEDULES -->		
 		<submenu name="menuschedules" displaytext="{tr(menuschedules)}">
 			<parameter type="bool" name="menuschedules_logos" displaytext="{tr(menuschedules_logos)}">0</parameter>
-		<!--<parameter type="bool" name="menuschedules_details" displaytext="{tr(menuchannels_details)}">0</parameter>
+			<parameter type="bool" name="menuschedules_details" displaytext="{tr(menuchannels_details)}">0</parameter>
 			<parameter type="int" min="0" max="2500"  name="menuschedules_details_fadetime" displaytext="{tr(menuchannels_details_fadetime)}">800</parameter>
 			<parameter type="int" min="1" max="1000"  name="menuschedules_details_delay" displaytext="{tr(menuchannels_details_delay)}">50</parameter>
-		-->
+		
 		</submenu>
-
-		</menu>
-
-    <!--
-    translations of displaytexts
-    -->
+<!-- CHANNEL -->
+		<submenu name="channel" displaytext="{tr(channel)}">
+			<parameter type="bool" name="channel_logos" displaytext="{tr(channel_logos)}">0</parameter>
+			<parameter type="bool" name="channel_signal" displaytext="{tr(channel_signal)}">0</parameter>
+			
+		</submenu>
+		
+<!-- TIMERS -->
+		<submenu name="menutimers" displaytext="{tr(menutimers)}">
+			<parameter type="bool" name="menutimers_logos" displaytext="{tr(menutimers_logos)}">0</parameter>
+			<parameter type="bool" name="menutimers_details" displaytext="{tr(menutimers_details)}">0</parameter>
+			<parameter type="int" min="0" max="2500"  name="menutimers_details_fadetime" displaytext="{tr(menutimers_details_fadetime)}">800</parameter>
+			<parameter type="int" min="1" max="1000"  name="menutimers_details_delay" displaytext="{tr(menutimers_details_delay)}">50</parameter>
+	
+		</submenu>
+		
+<!-- RECORDINGS -->
+		<submenu name="menurecordings" displaytext="{tr(menurecordings)}">
+			<parameter type="bool" name="menurecordings_details" displaytext="{tr(menurecordings_details)}">0</parameter>
+			<parameter type="int" min="0" max="2500"  name="menurecordings_details_fadetime" displaytext="{tr(menurecordings_details_fadetime)}">800</parameter>
+			<parameter type="int" min="1" max="1000"  name="menurecordings_details_delay" displaytext="{tr(menurecordings_details_delay)}">50</parameter>
+	
+		</submenu>
+</menu>
 <translations>
+<!-- RECORDINGS -->
+		<token name="tr(menurecordings)">
+			<trans lang="en_EN">Recordings Menu</trans>
+			<trans lang="de_DE">Aufzeichnungsmenü</trans>
+		</token>
+		<token name="tr(menurecordings_details)">
+			<trans lang="en_EN">Show details</trans>
+			<trans lang="de_DE">Deails anzeigen</trans>
+		</token>
+		
+		<token name="tr(menurecordings_details_fadetime)">
+			<trans lang="en_EN">Fadetime</trans>
+			<trans lang="de_DE">Details Einblendzeit </trans>
+		</token>
+		<token name="tr(menurecordings_details_delay)">
+			<trans lang="en_EN">Delay</trans>
+			<trans lang="de_DE">Details Verzögerung</trans>
+		</token>
+<!-- TIMERS -->
+		<token name="tr(menutimers)">
+			<trans lang="en_EN">Timer Menu</trans>
+			<trans lang="de_DE">Timermenü</trans>
+		</token>
+		<token name="tr(menutimers_logos)">
+			<trans lang="en_EN">Show channellogos</trans>
+			<trans lang="de_DE">Kanallogos anzeigen</trans>
+		</token>
+		<token name="tr(menutimers_details)">
+			<trans lang="en_EN">Show details</trans>
+			<trans lang="de_DE">Deails anzeigen</trans>
+		</token>
+		
+		<token name="tr(menutimers_details_fadetime)">
+			<trans lang="en_EN">Fadetime</trans>
+			<trans lang="de_DE">Details Einblendzeit </trans>
+		</token>
+		<token name="tr(menutimers_details_delay)">
+			<trans lang="en_EN">Delay</trans>
+			<trans lang="de_DE">Details Verzögerung</trans>
+		</token>
+<!-- CHANNEL -->
+		<token name="tr(channel)">
+			<trans lang="en_EN">Channel Switch</trans>
+			<trans lang="de_DE">Kanalwechsel</trans>
+		</token>
+		<token name="tr(channel_logos)">
+			<trans lang="en_EN">Show channellogos</trans>
+			<trans lang="de_DE">Kanallogos anzeigen</trans>
+		</token>
+		<token name="tr(channel_signal)">
+			<trans lang="en_EN">Show signal</trans>
+			<trans lang="de_DE">Signalstärke anzeigen</trans>
+		</token>
 <!-- CHANNEL -->
 		<token name="tr(menuchannels)">
 			<trans lang="en_EN">Channel Menu</trans>

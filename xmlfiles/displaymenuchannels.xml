@@ -127,7 +127,7 @@
           </area>
          <area x="99%" y="10%" width="1%" height="65%" layer="6">
 		 
-            <drawimage imagetype="skinpart" path="header" x="3" y="{areaheight} * {offset} / 1000+3" width="{areawidth}/1.5" height="{areaheight} * {height} / 1000-6"/>
+            <drawimage imagetype="skinpart" path="scrollbar" x="3" y="{areaheight} * {offset} / 1000+3" width="{areawidth}/1.5" height="{areaheight} * {height} / 1000-6"/>
         </area>
 </scrollbar>
 	
