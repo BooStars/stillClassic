@@ -28,6 +28,8 @@
 			<parameter type="bool" name="menuschedules_details" displaytext="{tr(menuchannels_details)}">0</parameter>
 			<parameter type="int" min="0" max="2500"  name="menuschedules_details_fadetime" displaytext="{tr(menuchannels_details_fadetime)}">800</parameter>
 			<parameter type="int" min="1" max="1000"  name="menuschedules_details_delay" displaytext="{tr(menuchannels_details_delay)}">50</parameter>
+			<parameter type="bool" name="menuschedules_icons" displaytext="{tr(menuschedules_icons)}">0</parameter>
+			
 		
 		</submenu>
 <!-- CHANNEL -->
@@ -51,6 +53,8 @@
 			<parameter type="bool" name="menurecordings_details" displaytext="{tr(menurecordings_details)}">0</parameter>
 			<parameter type="int" min="0" max="2500"  name="menurecordings_details_fadetime" displaytext="{tr(menurecordings_details_fadetime)}">800</parameter>
 			<parameter type="int" min="1" max="1000"  name="menurecordings_details_delay" displaytext="{tr(menurecordings_details_delay)}">50</parameter>
+			<parameter type="bool" name="menurecordings_icons" displaytext="{tr(menurecordings_icons)}">0</parameter>
+			
 	
 		</submenu>
 </menu>
@@ -73,6 +77,11 @@
 			<trans lang="en_EN">Delay</trans>
 			<trans lang="de_DE">Details Verzögerung</trans>
 		</token>
+			<token name="tr(menurecordings_icons)">
+			<trans lang="en_EN">Show icons</trans>
+			<trans lang="de_DE">Icons anzeigen</trans>
+		</token>
+		
 <!-- TIMERS -->
 		<token name="tr(menutimers)">
 			<trans lang="en_EN">Timer Menu</trans>
@@ -141,6 +150,10 @@
 		<token name="tr(menuschedules_logos)">
 			<trans lang="en_EN">Show channellogos</trans>
 			<trans lang="de_DE">Kanallogos anzeigen</trans>
+		</token>
+		<token name="tr(menuschedules_icons)">
+			<trans lang="en_EN">Show icons</trans>
+			<trans lang="de_DE">Icons anzeigen</trans>
 		</token>
 		
 		 

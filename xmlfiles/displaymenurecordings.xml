@@ -47,13 +47,19 @@
 		<drawtext condition="not{folder}" name="date" x="12%" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{time}" />	
 		<drawtext condition="not{folder}" name="date" x="20%" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{durationhours}:{durationminutes}" />	
 		
-		<drawtext condition="not{folder}++{new}" name="new" x="24%" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="*" />	
-		<drawtext condition="not{folder}++{cutted}" name="cutted" x="25%" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="%" />	
+		<drawtext condition="eq({menurecordings_icons}, 0)++not{folder}++{new}" name="new" x="24%" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="*" />	
+		<drawtext condition="eq({menurecordings_icons}, 0)++not{folder}++{cutted}" name="cutted" x="25%" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="%" />	
+		
 			
+		
 	</area>
 	
 		<areascroll  scrollelement="title" mode="carriagereturn" orientation="horizontal" delay="1000" scrollspeed="medium" x="30%" width="59%" layer="2">
-				<drawtext name="title" x="{width(recfolder)} + 10" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{name}" />	
+				<drawimage condition="eq({menurecordings_icons}, 1)++{new}" name="ico_list_new" imagetype="icon" path="ico_list_new" x="0" y="0" width="{areaheight}" height="{areaheight}"/>
+				<drawimage condition="eq({menurecordings_icons}, 1)++{folder}"  name="ico_list_folder" imagetype="icon" path="ico_list_folder" x="{width(ico_list_new)}" y="0" width="{areaheight}" height="{areaheight}"/>
+				<drawimage condition="eq({menurecordings_icons}, 1)++not{folder}++{cutted}" name="ico_list_cutted" imagetype="icon" path="ico_list_cutted" x="{posx(ico_list_new)}+{width(ico_list_new)}" y="0" width="{areaheight}" height="{areaheight}"/>
+		
+				<drawtext name="title" x="{posx(ico_list_folder)}+{width(ico_list_folder)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{name}" />	
 		</areascroll>
  </areacontainer> 
   <areacontainer condition="{current}">
@@ -66,13 +72,20 @@
 		<drawtext condition="not{folder}" name="date" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{printf('%02d.%02d.%d', daynumeric, month, year)}" />	
 		<drawtext condition="not{folder}" name="date" x="12%" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{time}" />	
 		<drawtext condition="not{folder}" name="date" x="20%" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{durationhours}:{durationminutes}" />	
-		<drawtext condition="not{folder}++{new}" name="new" x="24%" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="*" />	
-		<drawtext condition="not{folder}++{cutted}" name="cutted" x="25%" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="%" />	
+		<drawtext condition="eq({menurecordings_icons}, 0)++{new}" name="new" x="24%" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="*" />	
+		<drawtext condition="eq({menurecordings_icons}, 0)++not{folder}++{cutted}" name="cutted" x="25%" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="%" />	
+		
 		
 	</area>
 	
 		<areascroll  scrollelement="title" mode="carriagereturn" orientation="horizontal" delay="1000" scrollspeed="medium" x="30%" width="59%" layer="2">
-				<drawtext name="title" x="{width(recfolder)} + 10" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{name}" />	
+				<drawimage condition="eq({menurecordings_icons}, 1)++{new}" name="ico_list_new" imagetype="icon" path="ico_list_new_on" x="0" y="0" width="{areaheight}" height="{areaheight}"/>
+				<drawimage condition="eq({menurecordings_icons}, 1)++{folder}"  name="ico_list_folder" imagetype="icon" path="ico_list_folder_on" x="{width(ico_list_new)}" y="0" width="{areaheight}" height="{areaheight}"/>
+				<drawimage condition="eq({menurecordings_icons}, 1)++not{folder}++{cutted}" name="ico_list_cutted" imagetype="icon" path="ico_list_cutted_on" x="{posx(ico_list_new)}+{width(ico_list_new)}" y="0" width="{areaheight}" height="{areaheight}"/>
+		
+				<drawtext name="title" x="{posx(ico_list_folder)}+{width(ico_list_folder)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{name}" />	
+	
+				
 		</areascroll>
  </areacontainer> 
 </listelement>
@@ -102,9 +115,16 @@
 			<drawtext condition="not{folder}" name="newrecordingsfolder" x="{width(next)}+{width(poster)}*1.1" y="{posy(numrecordingsfolder)}+{height(numrecordingsfolder)}-10" width="96%" font="{vdrOsd}" fontsize="15%" color="{clrWhite}" text="{tr(duration)}: {duration} min" />
 
 		
+			
 			<drawimage condition="{new}" name="ico_new" imagetype="icon" path="ico_new" x="{posx(poster)}+{width(poster)}*1.1" y="0" valign="bottom" width="{areaheight}/5" height="{areaheight}/5" />
+			
+			<drawimage condition="{folder}++{new}" name="ico_folder" imagetype="icon" path="ico_folder" x="{posx(ico_new)}+{width(ico_new)}" y="0" valign="bottom" width="{areaheight}/5" height="{areaheight}/5" />
+			<drawimage condition="{folder}++not{new}" name="ico_folder" imagetype="icon" path="ico_folder" x="{posx(poster)}+{width(poster)}*1.1" y="0" valign="bottom" width="{areaheight}/5" height="{areaheight}/5" />
+		
 			<drawimage condition="{cutted}++{new}" name="ico_cutted" imagetype="icon" path="ico_cutted" x="{posx(ico_new)}+{width(ico_new)}" y="0" valign="bottom" width="{areaheight}/5" height="{areaheight}/5" />
 			<drawimage condition="{cutted}++not{new}" name="ico_cutted" imagetype="icon" path="ico_cutted" x="{posx(poster)}+{width(poster)}*1.1" y="0" valign="bottom" width="{areaheight}/5" height="{areaheight}/5" />
+		
+			
 		
 		<!--<drawimage condition="{percentseen}" name="icon" imagetype="icon" path="{seen/percentseen}" x="{width(next)}" y="0" valign="center" width="{areaheight}*0.7" height="{areaheight}" />
 			<drawimage condition="{watched}" name="icon" imagetype="icon" path="{watched}" x="{width(next)}" y="0" valign="center" width="{areaheight}*0.7" height="{areaheight}" />
@@ -126,6 +146,10 @@
 			<drawtext condition="not{folder}" name="newrecordingsfolder" x="{width(next)}*1.1" y="{posy(numrecordingsfolder)}+{height(numrecordingsfolder)}-10" width="96%" font="{vdrOsd}" fontsize="15%" color="{clrWhite}" text="{tr(duration)}: {duration} min" />
 
 			<drawimage condition="{new}" name="ico_new" imagetype="icon" path="ico_new" x="{width(next)}*1.1" y="0" valign="bottom" width="{areaheight}/5" height="{areaheight}/5" />
+		
+			<drawimage condition="{folder}++{new}" name="ico_folder" imagetype="icon" path="ico_folder" x="{posx(ico_new)}+{width(ico_new)}" y="0" valign="bottom" width="{areaheight}/5" height="{areaheight}/5" />
+			<drawimage condition="{folder}++not{new}" name="ico_folder" imagetype="icon" path="ico_folder" x="{width(next)}*1.1" y="0" valign="bottom" width="{areaheight}/5" height="{areaheight}/5" />
+		
 			<drawimage condition="{cutted}++{new}" name="ico_cutted" imagetype="icon" path="ico_cutted" x="{posx(ico_new)}+{width(ico_new)}" y="0" valign="bottom" width="{areaheight}/5" height="{areaheight}/5" />
 			<drawimage condition="{cutted}++not{new}" name="ico_cutted" imagetype="icon" path="ico_cutted" x="{width(next)}*1.1" y="0" valign="bottom" width="{areaheight}/5" height="{areaheight}/5" />
 		
@@ -152,8 +176,9 @@
 <scrollbar>
        <area x="99%" y="10%" width="1%" height="65%" layer="5">
 	       <drawrectangle x="0" y="0" width="{areawidth}" height="{areaheight}" color="{clrBlack}" />
+		   <drawrectangle x="3" y="3" width="{areawidth}-6" height="{areaheight}-6" color="{clrTransparent}" />
+		</area>
 		
-          </area>
          <area x="99%" y="10%" width="1%" height="65%" layer="6">
 		 
             <drawimage imagetype="skinpart" path="scrollbar" x="3" y="{areaheight} * {offset} / 1000+3" width="{areawidth}/1.5" height="{areaheight} * {height} / 1000-6"/>

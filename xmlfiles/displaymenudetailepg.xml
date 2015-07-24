@@ -42,10 +42,10 @@
 
 
 <scrollbar>
-       <area x="99%" y="10%" width="1%" height="65%" layer="5">
+          <area x="99%" y="10%" width="1%" height="65%" layer="5">
 	       <drawrectangle x="0" y="0" width="{areawidth}" height="{areaheight}" color="{clrBlack}" />
-		
-          </area>
+		   <drawrectangle x="3" y="3" width="{areawidth}-6" height="{areaheight}-6" color="{clrTransparent}" />
+		</area>
          <area x="99%" y="10%" width="1%" height="65%" layer="6">
 		 
             <drawimage imagetype="skinpart" path="scrollbar" x="3" y="{areaheight} * {offset} / 1000+3" width="{areawidth}/1.5" height="{areaheight} * {height} / 1000-6"/>

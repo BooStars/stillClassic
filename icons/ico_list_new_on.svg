@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="128"
+   height="128"
+   id="svg3767"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="ico_list_new_on.svg">
+  <defs
+     id="defs3769">
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect3856"
+       effect="spiro" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath2988">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 569.13707,314.503 26.84608,655.0445 93.96131,69.7999 612.09084,-263.0917 c 0,0 69.7998,-195.97643 59.0614,-201.34565 -10.7385,-5.36922 -566.4525,-324.83766 -566.4525,-324.83766 l -182.55339,21.47687 z"
+         id="path2990"
+         inkscape:connector-curvature="0" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3009">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 639.72881,270.77966 0,775.45764 L 1357.2534,631.97427 639.23819,217.42799 z"
+         id="path3011"
+         inkscape:connector-curvature="0" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3802">
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:5.79035282;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect3804"
+         width="647.21301"
+         height="717.4895"
+         x="644.04382"
+         y="278.01328" />
+    </clipPath>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3929"
+       id="linearGradient3935"
+       x1="-846.99457"
+       y1="848.50134"
+       x2="7882.6704"
+       y2="1220.3998"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-18.634748,69.177544)" />
+    <linearGradient
+       id="linearGradient3929">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.52719665;"
+         offset="0"
+         id="stop3931" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop3933" />
+    </linearGradient>
+    <linearGradient
+       y2="1220.3998"
+       x2="7882.6704"
+       y1="848.50134"
+       x1="-846.99457"
+       gradientTransform="matrix(0.04036828,0,0,1.0854649,13.253358,-333.37987)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3033"
+       xlink:href="#linearGradient3929"
+       inkscape:collect="always" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3802-1">
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:5.79035282;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect3804-7"
+         width="647.21301"
+         height="717.4895"
+         x="644.04382"
+         y="278.01328" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3802-1-1">
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:5.79035282;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect3804-7-7"
+         width="647.21301"
+         height="717.4895"
+         x="644.04382"
+         y="278.01328" />
+    </clipPath>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3809"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3809-4"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3809-1"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3809-4-7"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3809-1-1"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3809-4-7-7"
+       is_visible="true" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="-180.49392"
+     inkscape:cy="64.233533"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:showpageshadow="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1005"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3772">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-924.36218)">
+    <path
+       sodipodi:type="star"
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path3020"
+       sodipodi:sides="5"
+       sodipodi:cx="-248.92857"
+       sodipodi:cy="1.2142857"
+       sodipodi:r1="69.050598"
+       sodipodi:r2="34.525299"
+       sodipodi:arg1="0.60521755"
+       sodipodi:arg2="1.2335361"
+       inkscape:flatsided="false"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m -192.14286,40.500002 -45.36119,-6.705407 -31.23971,33.56607 -7.64016,-45.213144 -41.57683,-19.3382406 40.63932,-21.2378534 5.54381,-45.51776 32.75664,32.087429 45.00309,-8.793282 -20.3946,41.06897506 z"
+       transform="matrix(0.57225566,0,0,0.5483333,209.95484,987.42608)"
+       inkscape:transform-center-x="3.5040518"
+       inkscape:transform-center-y="0.27026344" />
+  </g>
+</svg>

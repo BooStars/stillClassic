@@ -51,19 +51,29 @@
 		<drawtext condition="{current}" valign="center" name="date" x="0" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{day} {printf('%02d', daynumeric)}" />		
 		<drawtext condition="{current}" valign="center" name="start" x="{width(date)}*2" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{start} - {stop}" />	
 
-		<drawtext condition="{current}++{timerpartitial}" name="timerpartitial" x="{posx(start)}+{width(start)}*1.5" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="t " /> 
-		<drawtext condition="{current}++{timerfull}" name="timerfull" x="{posx(start)}+{width(start)}*1.5" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="T " /> 
-		<drawtext condition="{current}++{hasVPS}" name="vps" x="{width(timerfull)}+{posx(start)}+{width(start)}*1.5" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="V" /> 		
+		<drawtext condition="eq({menuschedules_icons}, 0)++{current}++{timerpartitial}" name="timerpartitial" x="{posx(start)}+{width(start)}*1.5" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="t " /> 
+		<drawtext condition="eq({menuschedules_icons}, 0)++{current}++{timerfull}" name="timerfull" x="{posx(start)}+{width(start)}*1.5" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="T " /> 
+		<drawtext condition="eq({menuschedules_icons}, 0)++{current}++{hasVPS}" name="vps" x="{width(timerfull)}+{posx(start)}+{width(start)}*1.5" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="V" /> 		
 
-		<drawtext condition="not{current}++{timerpartitial}" name="timerpartitial" x="{posx(start)}+{width(start)}*1.5" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="t " /> 
-		<drawtext condition="not{current}++{timerfull}" name="timerfull" x="{posx(start)}+{width(start)}*1.5" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="T " /> 
-		<drawtext condition="not{current}++{hasVPS}" name="vps" x="{width(timerfull)}+{posx(start)}+{width(start)}*1.5" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="V" /> 		
+		<drawtext condition="eq({menuschedules_icons}, 0)++not{current}++{timerpartitial}" name="timerpartitial" x="{posx(start)}+{width(start)}*1.5" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="t " /> 
+		<drawtext condition="eq({menuschedules_icons}, 0)++not{current}++{timerfull}" name="timerfull" x="{posx(start)}+{width(start)}*1.5" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="T " /> 
+		<drawtext condition="eq({menuschedules_icons}, 0)++not{current}++{hasVPS}" name="vps" x="{width(timerfull)}+{posx(start)}+{width(start)}*1.5" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="V" /> 		
 
+			
+		
 		
 	</area>
 	<areascroll condition="{whatson}++ not{separator}" scrollelement="menutext" mode="carriagereturn" orientation="horizontal" delay="1000" scrollspeed="medium" x="25%" width="73%" layer="3">	
-		<drawtext condition="not{current}" valign="center" name="menutext" x="0" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{title}" />
-		<drawtext condition="{current}" valign="center" name="menutext" x="0" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{title}" />
+		
+		<drawimage condition="eq({menuschedules_icons}, 1)++not{current}++{hasVPS}" name="ico_list_vps_off" imagetype="icon" path="ico_list_vps_off" x="0" y="0" valign="center" width="{areaheight}" height="{areaheight}*0.8" />
+		<drawimage condition="eq({menuschedules_icons}, 1)++{current}++{hasVPS}" name="ico_list_vps_on" imagetype="icon" path="ico_list_vps_on" x="0" y="0" valign="center" width="{areaheight}" height="{areaheight}*0.8" />
+		<drawimage condition="eq({menuschedules_icons}, 1)++not{current}++{timerfull}" name="ico_list_timer_off" imagetype="icon" path="ico_list_timer_off" x="{width(ico_list_vps_on)}+{posx(ico_list_vps_on)}" y="0" valign="center" width="{areaheight}" height="{areaheight}*0.8" />
+		<drawimage condition="eq({menuschedules_icons}, 1)++{current}++{timerfull}" name="ico_list_timer_on" imagetype="icon" path="ico_list_timer_on" x="{width(ico_list_vps_on)}+{posx(ico_list_vps_on)}" y="0" valign="center" width="{areaheight}" height="{areaheight}*0.8" />
+		<drawimage condition="eq({menuschedules_icons}, 1)++not{current}++{timerpartitial}" name="ico_list_timerpart_off" imagetype="icon" path="ico_list_timer_off" x="{posx(ico_list_timer_on)}" y="0" valign="center" width="{areaheight}" height="{areaheight}*0.6" />
+		<drawimage condition="eq({menuschedules_icons}, 1)++{current}++{timerpartitial}" name="ico_list_timerpart_on" imagetype="icon" path="ico_list_timer_on" x="{posx(ico_list_timer_on)}" y="0" valign="center" width="{areaheight}" height="{areaheight}*0.6" />
+		
+		<drawtext condition="not{current}" valign="center" name="menutext" x="{width(ico_list_timer_on)}+{posx(ico_list_timer_on)}" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{title}" />
+		<drawtext condition="{current}" valign="center" name="menutext" x="{width(ico_list_timer_on)}+{posx(ico_list_timer_on)}" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{title}" />
  
     </areascroll>
  
@@ -80,13 +90,16 @@
 				<drawrectangle name="process2" condition="{running}" x="{posx(starttime)} + {width(starttime)}*1.25+2"  valign="center" y="0" width="{width(process1)} - 4" height="{areaheight}/2 - 4" color="{clrTransparent}" />
 				<drawrectangle name="process3" condition="{running}" x="{posx(starttime)} + {width(starttime)}*1.25+4"  valign="center" y="0" width="{width(process1)} * {elapsed} / {duration} - 8" height="{areaheight}/2 - 8" color="{clrWhite}" />
 			
-				<drawtext condition="{timerpartitial}" name="timerpartitial" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="t " /> 
-				<drawtext condition="{timerfull}" name="timerfull" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="T " /> 
-				<drawtext condition="{hasVPS}" name="vps" x="{posx(timerfull)}+{width(timerfull)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="V" /> 
+				<drawtext condition="eq({menuschedules_icons}, 0)++{timerfull}" name="timerfull" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="T " /> 
+				<drawtext condition="eq({menuschedules_icons}, 0)++{hasVPS}" name="vps" x="{posx(timerfull)}+{width(timerfull)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="V" /> 
 		</area>
 
 		<areascroll condition="{whatsonnow} ++ not{separator}" scrollelement="menutext" mode="carriagereturn" orientation="horizontal" delay="1000" scrollspeed="medium" x="46%" width="48%" layer="3">
-				<drawtext name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{title}" />
+		
+				<drawimage condition="eq({menuschedules_icons}, 1)++{hasVPS}" name="ico_list_vps_off" imagetype="icon" path="ico_list_vps_off" x="0" y="0" valign="center" width="{areaheight}" height="{areaheight}*0.8" />
+				<drawimage condition="eq({menuschedules_icons}, 1)++{timerfull}" name="ico_list_timer_off" imagetype="icon" path="ico_list_timer_off" x="{width(ico_list_vps_off)}+{posx(ico_list_vps_off)}" y="0" valign="center" width="{areaheight}" height="{areaheight}*0.8" />
+			
+				<drawtext name="menutext" x="{width(ico_list_timer_off)}+{posx(ico_list_timer_off)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{title}" />
 		</areascroll>
 </areacontainer>	
 
@@ -101,13 +114,17 @@
 				<drawrectangle name="process2" condition="{running}" x="{posx(starttime)} + {width(starttime)}*1.25+2" valign="center" y="0" width="{width(process1)} - 4" height="{areaheight}/2 - 4" color="{clrTransparent}" />
 				<drawrectangle name="process3" condition="{running}" x="{posx(starttime)} + {width(starttime)}*1.25+4" valign="center" y="0" width="{width(process1)} * {elapsed} / {duration} - 8" height="{areaheight}/2 - 8" color="{clrBlack}" />
 			
-				<drawtext condition="{timerpartitial}" name="timerpartitial" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="t " /> 
-				<drawtext condition="{timerfull}" name="timerfull" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="T " /> 
-				<drawtext condition="{hasVPS}" name="vps" x="{posx(timerfull)}+{width(timerfull)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="V" /> 
+				<drawtext condition="eq({menuschedules_icons}, 0)++{timerfull}" name="timerfull" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="T " /> 
+				<drawtext condition="eq({menuschedules_icons}, 0)++{hasVPS}" name="vps" x="{posx(timerfull)}+{width(timerfull)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="V" /> 
 		</area>
 
 		<areascroll condition="{whatsonnow} ++ not{separator}" scrollelement="menutext" mode="carriagereturn" orientation="horizontal" delay="1000" scrollspeed="medium" x="46%" width="48%" layer="3">
-				<drawtext name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{title}" />
+				<drawimage condition="eq({menuschedules_icons}, 1)++{hasVPS}" name="ico_list_vps_on" imagetype="icon" path="ico_list_vps_on" x="0" y="0" valign="center" width="{areaheight}" height="{areaheight}*0.8" />
+				<drawimage condition="eq({menuschedules_icons}, 1)++{timerfull}" name="ico_list_timer_on" imagetype="icon" path="ico_list_timer_on" x="{width(ico_list_vps_on)}+{posx(ico_list_vps_on)}" y="0" valign="center" width="{areaheight}" height="{areaheight}*0.8" />
+			
+				<drawtext name="menutext" x="{width(ico_list_timer_on)}+{posx(ico_list_timer_on)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{title}" />
+		
+				
 		</areascroll>
  </areacontainer>	 
 			
@@ -120,14 +137,17 @@
 		<drawtext name="channelname" x="{areawidth}/4" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{channelname}" /> 
 		<drawtext name="starttime" x="{areawidth}/1.5" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{start} - {stop}" /> 
 		
-				<drawtext condition="{timerpartitial}" name="timerpartitial" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="t " /> 
-				<drawtext condition="{timerfull}" name="timerfull" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="T " /> 
-				<drawtext condition="{hasVPS}" name="vps" x="{posx(timerfull)}+{width(timerfull)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="V" /> 
+				<drawtext condition="eq({menuschedules_icons}, 0)++{timerfull}" name="timerfull" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="T " /> 
+				<drawtext condition="eq({menuschedules_icons}, 0)++{hasVPS}" name="vps" x="{posx(timerfull)}+{width(timerfull)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="V" /> 
 
 	</area>
 
 	<areascroll condition="{whatsonnext} ++ not{separator}" scrollelement="menutext" mode="carriagereturn" orientation="horizontal" delay="1000" scrollspeed="medium" x="45%" width="49%" layer="3">
-		<drawtext name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{title}" />	
+				<drawimage condition="eq({menuschedules_icons}, 1)++{hasVPS}" name="ico_list_vps_off" imagetype="icon" path="ico_list_vps_off" x="0" y="0" valign="center" width="{areaheight}" height="{areaheight}*0.8" />
+				<drawimage condition="eq({menuschedules_icons}, 1)++{timerfull}" name="ico_list_timer_off" imagetype="icon" path="ico_list_timer_off" x="{width(ico_list_vps_off)}+{posx(ico_list_vps_off)}" y="0" valign="center" width="{areaheight}" height="{areaheight}*0.8" />
+			
+				<drawtext name="menutext" x="{width(ico_list_timer_off)}+{posx(ico_list_timer_off)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{title}" />
+
     </areascroll>
  </areacontainer>	 
 <areacontainer condition="{current}">
@@ -137,14 +157,18 @@
 		<drawtext name="channelname"  x="{areawidth}/4" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{channelname}" /> 
 		<drawtext name="starttime" x="{areawidth}/1.5" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{start} - {stop}" /> 
 		
-			<drawtext condition="{timerpartitial}" name="timerpartitial" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="t " /> 
-			<drawtext condition="{timerfull}" name="timerfull" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="T " /> 
-			<drawtext condition="{hasVPS}" name="vps" x="{posx(timerfull)}+{width(timerfull)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="V" /> 
+			<drawtext condition="eq({menuschedules_icons}, 0)++{timerfull}" name="timerfull" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="T " /> 
+			<drawtext condition="eq({menuschedules_icons}, 0)++{hasVPS}" name="vps" x="{posx(timerfull)}+{width(timerfull)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="V" /> 
 	
 	</area>
 
 	<areascroll condition="{whatsonnext} ++ not{separator}" scrollelement="menutext" mode="carriagereturn" orientation="horizontal" delay="1000" scrollspeed="medium" x="45%" width="49%" layer="3">
-		<drawtext name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{title}" />	
+			<drawimage condition="eq({menuschedules_icons}, 1)++{hasVPS}" name="ico_list_vps_on" imagetype="icon" path="ico_list_vps_on" x="0" y="0" valign="center" width="{areaheight}" height="{areaheight}*0.8" />
+			<drawimage condition="eq({menuschedules_icons}, 1)++{timerfull}" name="ico_list_timer_on" imagetype="icon" path="ico_list_timer_on" x="{width(ico_list_vps_on)}+{posx(ico_list_vps_on)}" y="0" valign="center" width="{areaheight}" height="{areaheight}*0.8" />
+			
+			<drawtext name="menutext" x="{width(ico_list_timer_on)}+{posx(ico_list_timer_on)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{title}" />
+
+		
     </areascroll>
  </areacontainer>
 <!-- WHATSONFAVORITES  -->
@@ -155,13 +179,17 @@
 				<drawtext name="channelname" x="{areawidth}/4" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{channelname}" /> 
 				<drawtext name="starttime" x="{areawidth}/1.5" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{start} - {stop}" /> 
 				
-				<drawtext condition="{timerpartitial}" name="timerpartitial" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="t " /> 
-				<drawtext condition="{timerfull}" name="timerfull" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="T " /> 
-				<drawtext condition="{hasVPS}" name="vps" x="{posx(timerfull)}+{width(timerfull)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="V" /> 
+				<drawtext condition="eq({menuschedules_icons}, 0)++{timerfull}" name="timerfull" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="T " /> 
+				<drawtext condition="eq({menuschedules_icons}, 0)++{hasVPS}" name="vps" x="{posx(timerfull)}+{width(timerfull)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="V" /> 
 	</area>
 
 	<areascroll condition="{whatsonfavorites} ++ not{separator}" scrollelement="menutext" mode="carriagereturn" orientation="horizontal" delay="1000" scrollspeed="medium" x="45%" width="49%" layer="3">
-		<drawtext name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{title}" />	
+				<drawimage condition="eq({menuschedules_icons}, 1)++{hasVPS}" name="ico_list_vps_off" imagetype="icon" path="ico_list_vps_off" x="0" y="0" valign="center" width="{areaheight}" height="{areaheight}*0.8" />
+				<drawimage condition="eq({menuschedules_icons}, 1)++{timerfull}" name="ico_list_timer_off" imagetype="icon" path="ico_list_timer_off" x="{width(ico_list_vps_off)}+{posx(ico_list_vps_off)}" y="0" valign="center" width="{areaheight}" height="{areaheight}*0.8" />
+			
+				<drawtext name="menutext" x="{width(ico_list_timer_off)}+{posx(ico_list_timer_off)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrWhite}" text="{title}" />
+
+		
     </areascroll>
  </areacontainer>	
  <areacontainer condition="{current}">
@@ -171,13 +199,16 @@
 				<drawtext name="channelname" x="{areawidth}/4" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{channelname}" /> 
 				<drawtext name="starttime" x="{areawidth}/1.5" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{start} - {stop}" /> 
 				
-				<drawtext condition="{timerpartitial}" name="timerpartitial" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="t " /> 
-				<drawtext condition="{timerfull}" name="timerfull" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="T " /> 
-				<drawtext condition="{hasVPS}" name="vps" x="{posx(timerfull)}+{width(timerfull)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="V" /> 
+				<drawtext condition="eq({menuschedules_icons}, 0)++{timerfull}" name="timerfull" x="{areawidth}/1.1" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="T " /> 
+				<drawtext condition="eq({menuschedules_icons}, 0)++{hasVPS}" name="vps" x="{posx(timerfull)}+{width(timerfull)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="V" /> 
 	</area>
 
 	<areascroll condition="{whatsonfavorites} ++ not{separator}" scrollelement="menutext" mode="carriagereturn" orientation="horizontal" delay="1000" scrollspeed="medium" x="45%" width="49%" layer="3">
-		<drawtext name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{title}" />	
+			<drawimage condition="eq({menuschedules_icons}, 1)++{hasVPS}" name="ico_list_vps_on" imagetype="icon" path="ico_list_vps_on" x="0" y="0" valign="center" width="{areaheight}" height="{areaheight}*0.8" />
+			<drawimage condition="eq({menuschedules_icons}, 1)++{timerfull}" name="ico_list_timer_on" imagetype="icon" path="ico_list_timer_on" x="{width(ico_list_vps_on)}+{posx(ico_list_vps_on)}" y="0" valign="center" width="{areaheight}" height="{areaheight}*0.8" />
+			
+			<drawtext name="menutext" x="{width(ico_list_timer_on)}+{posx(ico_list_timer_on)}" valign="center" font="{vdrOsd}" fontsize="90%" color="{clrBlack}" text="{title}" />
+
     </areascroll>
  </areacontainer>	
 <!-- separator -->
@@ -207,8 +238,8 @@
 			<drawtext condition="{running}" name="stop" x="{areawidth}-{width(stop)}" y="{posy(shorttext)}+{height(shorttext)}*1.1" font="{vdrOsd}" fontsize="13%" color="{clrWhite}" text=" {stop}" />
 			
 			<drawtext condition="not{running}" x="{width(next)}+{width(poster)}*1.1" y="{posy(shorttext)}+{height(shorttext)}*1.1" font="{vdrOsd}" fontsize="13%" color="{clrWhite}" text="{start} - {stop} ({duration} min)" />
-	
 			
+				
 		</area>
 		<area condition="not{hasposter}" x="0%" y="102%" width="40%" height="28%" layer="5">
 			
@@ -247,10 +278,10 @@
 
 
 <scrollbar>
-       <area x="99%" y="10%" width="1%" height="65%" layer="5">
+            <area x="99%" y="10%" width="1%" height="65%" layer="5">
 	       <drawrectangle x="0" y="0" width="{areawidth}" height="{areaheight}" color="{clrBlack}" />
-		
-          </area>
+		   <drawrectangle x="3" y="3" width="{areawidth}-6" height="{areaheight}-6" color="{clrTransparent}" />
+		</area>
          <area x="99%" y="10%" width="1%" height="65%" layer="6">
 		 
             <drawimage imagetype="skinpart" path="scrollbar" x="3" y="{areaheight} * {offset} / 1000+3" width="{areawidth}/1.5" height="{areaheight} * {height} / 1000-6"/>

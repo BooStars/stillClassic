@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1.77756in"
+   height="1.77756in"
+   viewBox="0 0 128 128"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="ico_timer_recording.svg">
+  <metadata
+     id="metadata9">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs7" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1005"
+     id="namedview5"
+     showgrid="false"
+     inkscape:zoom="1.4751808"
+     inkscape:cx="-74.567132"
+     inkscape:cy="79.990196"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <path
+     id="Auswahl"
+     fill="none"
+     stroke="black"
+     stroke-width="1"
+     d="M 65.00,31.00            C 80.09,31.07 93.27,40.96 96.48,56.00              97.13,59.03 97.03,62.87 97.00,66.00              96.90,74.24 93.69,81.95 87.82,87.82              80.14,95.49 72.34,97.12 62.00,97.00              47.45,96.82 34.57,86.30 31.52,72.00              30.87,68.97 30.97,65.13 31.00,62.00              31.06,57.63 31.42,55.10 33.09,51.00              37.34,40.62 45.36,34.38 56.00,31.52              59.47,30.97 61.53,30.99 65.00,31.00 Z"
+     style="fill:#ff0000;fill-opacity:1;stroke:none" />
+</svg>
